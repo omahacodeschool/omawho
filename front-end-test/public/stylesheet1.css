@@ -109,7 +109,7 @@ span.user_name {
   margin: -0.7vw auto 0 auto;
   padding: 0.5vw 0 0.5vw 0;
   border-bottom: 1px solid black;
-  border-top: 0.5vw solid black;
+  border-top: 1vw solid black;
   position: absolute;
   bottom: 0;
 }
@@ -117,13 +117,13 @@ span.user_name {
 
 .polaroid.graphics p{
   border-bottom: 1px solid green;
-  border-top: 0.5vw solid green;
+  border-top: 1vw solid green;
   color: darkgreen;
 }
 
 .polaroid.web p{
   border-bottom: 1px solid blue;
-  border-top: 0.5vw solid blue;
+  border-top: 1vw solid blue;
   color: darkblue;
 }
 
