@@ -3,9 +3,12 @@ img#quiz {
   position: fixed;
   display: block;
   width: 7.5vw;
-  right: 3.5vw;
-  top: 0.8vw;
+  right: 3.2vw;
+  top: 0.6vw;
   font-size: 8vw;
+  background: white;
+  border: 2px solid white;
+  border-radius: 100%;
 }
 
 h1.title {
@@ -39,6 +42,15 @@ div#dropdown {
     text-align: center;
 }
 
+select {
+  margin: 2.5vw auto 3vw auto;
+  width: 35vw;
+  background: white;
+  border-radius: 0px;
+  height: 4vw;
+  font-size: 2.5vw;
+}
+
 body {
   margin: 0;
   background: lightgrey;
@@ -62,7 +74,7 @@ div.polaroid {
   text-align: center;
   position: relative;
   margin: 1vw;
-  background: rgba(0, 0, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 div.polaroid img {
@@ -71,7 +83,6 @@ div.polaroid img {
   padding-bottom: 0;
   padding: 0;
   margin: 0;
-  /* border-bottom: 0.5vw solid blue; */
   -webkit-filter: opacity(50%);
   z-index: 1;
 }
@@ -97,18 +108,63 @@ span.user_name {
   background: white;
   margin: -0.7vw auto 0 auto;
   padding: 0.5vw 0 0.5vw 0;
-  border-bottom: 1px solid blue;
-  border-top: 0.5vw solid blue;
+  border-bottom: 1px solid black;
+  border-top: 0.5vw solid black;
   position: absolute;
   bottom: 0;
 }
 
-select {
-  /* float: left; */
-  margin: 2.5vw auto 3vw auto;
-  width: 35vw;
-  background: white;
-  border-radius: 0px;
-  height: 4vw;
-  font-size: 2.5vw;
+
+.polaroid.graphics p{
+  border-bottom: 1px solid green;
+  border-top: 0.5vw solid green;
+  color: darkgreen;
+}
+
+.polaroid.web p{
+  border-bottom: 1px solid blue;
+  border-top: 0.5vw solid blue;
+  color: darkblue;
+}
+
+.polaroid.photo p{
+  border-bottom: 1px solid red;
+  border-top: 1vw solid red;
+  color: maroon;
+}
+
+.polaroid.fashion p{
+  border-bottom: 1px solid violet;
+  border-top: 1vw solid violet;
+  color: darkviolet;
+}
+
+.polaroid.architect p{
+  border-bottom: 1px solid goldenrod;
+  border-top: 1vw solid goldenrod;
+  color: darkgoldenrod;
+}
+
+.polaroid.writing p{
+  border-bottom: 1px solid saddlebrown;
+  border-top: 1vw solid saddlebrown;
+  color: saddlebrown;
+}
+
+.polaroid.community p{
+  border-bottom: 1px solid lime;
+  border-top: 1vw solid lime;
+  color: green;
+}
+
+.polaroid.nonprofit p{
+  border-bottom: 1px solid salmon;
+  border-top: 1vw solid salmon;
+  color: DarkSalmon;
+}
+
+.polaroid.sales p{
+  border-bottom: 1px solid orange;
+  border-top: 1vw solid orange;
+  color: DarkOrange;
 }
