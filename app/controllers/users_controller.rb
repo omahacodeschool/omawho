@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     redirect_to user_path(user)
   end
-  
+
   def user_params
     params[:user][:crypted_password] = BCrypt::Password.create(params[:user][:crypted_password])
     params[:user][:email].downcase!
@@ -15,13 +15,28 @@ class UsersController < ApplicationController
   end
 
   def new
-    
+
   end
-  
+
   def login
-    
+
   end
-  
+
+  def forgot_password_form
+  end
+
+  def assign_new_password
+    @user = User.find_by_email(params[:user][:email.downcase])
+    random_password = Array.new(10).map { (65 + rand(58)).chr }.join
+    @user.crypted_password = random_password
+    if @user.save
+      Mailer.create_and_deliver_password_change(@user, random_password)
+    else
+      @message = "Assign new password failed"
+      render :error_message
+    end
+  end
+
 
   def edit
     @user = User.find(params[:id])
@@ -52,4 +67,13 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to "/"
   end
+
+  def crypted_password
+    BCrypt::Password.new(read_attribute(:crypted_password))
+  end
+
+  def crypted_password=(password)
+    crypted_password = BCrypt::Password.create(password)
+  end
+
 end

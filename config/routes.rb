@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
+scope path: "/users", controller: :users do
+  get 'forgotpassword' => :forgot_password_form
+  post 'forgotpassword' => :assign_new_password
+end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
