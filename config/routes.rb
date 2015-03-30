@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  root "users#index"
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :categories
-  resources :users
+  resources :users do
+    member do
+      get "/delete" => "users#request_destroy"
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
