@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_login
+  before_filter :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
     @users = User.paginate(1)
