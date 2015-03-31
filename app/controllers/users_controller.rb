@@ -73,7 +73,7 @@ class UsersController < ApplicationController
   end
 
   def crypted_password=(password)
-    crypted_password = BCrypt::Password.create(password)
+    write_attribute(:crypted_password, BCrypt::Password.create(password))
   end
 
 end
