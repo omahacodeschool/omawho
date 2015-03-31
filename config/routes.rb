@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "users#index"
 
+  get '/page/:number' => 'users#page'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   get '/category/:category_name' => 'categories#show', as: 'category'

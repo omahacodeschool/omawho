@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.paginate(1)
+  end
+
+  def page
+    @users = User.paginate(params[:number])
   end
 
   def create
