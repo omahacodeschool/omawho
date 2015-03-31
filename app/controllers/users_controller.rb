@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:id])
   end
 
   def show
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def request_destroy
-    if session[:user] && session[:user]["id"] == params[:id]
+    if session[:user] && session[:user]["username"] == params[:id]
       render :request_destroy
     else
       @message = "You do not have permission"
@@ -63,9 +63,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
-    redirect_to "/"
+    if session[:user] && session[:user]["id"] == params[:id]
+      user = User.find(params[:id])
+      user.destroy
+      redirect_to "/"
+    else
+      @message = "You do not have permission"
+      render :error_message
+    end
   end
 
   def crypted_password
