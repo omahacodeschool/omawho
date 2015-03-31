@@ -1,11 +1,18 @@
 
 img#quiz {
-    width: 7.5vw;
-  }
+    width: 7vw;
+    display: inline-block;
+    margin: -6.5vmin 0 0 0;
+}
 
   h1.title {
-    display:inline-block
-  }
+    font-family: Titillium Web;
+    display:inline-block;
+    font-size: 11vmin;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
 
   nav {
     border-bottom: 2px solid;
@@ -13,10 +20,38 @@ img#quiz {
   }
 
   div#links {
-      position: relative;
+      height: 15vmin;
+      /* display: table-cell; */
+      /* display: inline-block; */   
+      /* float: none; */   
+      /* vertical-align: middle; */
       background: grey;
-      text-align: center;
-  }
+}
+
+#links a {
+    color: black;
+    margin-top: 4vw;
+    height: 11vw;
+    width: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+small#tagline {
+    font-family: Titillium Web;
+    width: 100%;
+    display: block;
+    letter-spacing: 0.40vmin;
+    text-transform: uppercase;
+}
+
+#links button {
+    margin-top: 5vmin;
+    background: white;
+    border: 0;
+    font-family: Titillium Web;
+}
 
   body {
     background: lightgrey;
@@ -24,28 +59,55 @@ img#quiz {
     background-size: cover;
     background-attachment: fixed;
   }
+  
+  .sort_by small {
+      /* width: 100%; */
+      text-align: center;
+      font-size: x-small;
+      color: white;
+      margin: 1vw;
+  }
+
+  .sort_by .col-sm-2 {
+      background: black;
+      height: 3vw;
+      padding: 0;
+  }
+
+  .sort_by .col-sm-2:hover{
+      background: grey;
+      border-bottom: 3px solid red;
+  }
+
+  .container.sort_by {
+      margin-top: 1vw;
+  }
 
   div.polaroid {
     text-align: center;
-
-    background: rgba(0, 0, 0, 0.5);
+    margin: 0.9vw;
+    /* padding: 1vw; */
+    border: 1.5vmin solid white;
+    overflow: hidden;
+    /* height: 33vw; */
+    text-align: center;
+    background: white;
   }
 
   div.polaroid img {
     width: 100%;
-
-    -webkit-filter: opacity(50%);
+    margin: 0;
   }
 
-  .polaroid img:hover {
-    -webkit-filter: initial;
+  .polaroid:hover {
+   border: 0;
   }
 
   .polaroid span {
-    font-family: sans-serif;
+    font-family: Rokkitt;
     display: block;
     margin: 0.5vw;
-    font-size: medium;
+    font-size: small;
   }
 
   span.user_name {
@@ -55,13 +117,12 @@ img#quiz {
 
   .polaroid p {
     width: 100%;
-    height: 8vw;
+    height: 11vmin;
+    line-height: 1.2;
     background: white;
-    margin: 0;
-    padding: 0.5vw 0 0.5vw 0;
-    border-bottom: 1px solid black;
+    margin: 0 0 0 0;
+    padding: 0;
     border-top: 1vw solid black;
-    bottom: 0;
     z-index: 2;
   }
 
