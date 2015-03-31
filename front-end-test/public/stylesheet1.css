@@ -21,19 +21,17 @@ img#quiz {
   }
 
   div#links {
-      height: 15vmin;
-      /* display: table-cell; */
-      /* display: inline-block; */   
-      /* float: none; */   
-      /* vertical-align: middle; */
-      background: grey;
+  height: 15vmin;    
+  background: grey;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #links a {
     color: black;
     margin-top: 4vw;
-    height: 11vw;
-    width: 100%;
+/*    height: 11vw;
+*/    width: 100%;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -44,14 +42,23 @@ small#tagline {
     width: 100%;
     display: block;
     letter-spacing: 0.40vmin;
+    font-size: 2vmin;
     text-transform: uppercase;
 }
 
 #links button {
-    margin-top: 5vmin;
+    /* margin: 5% 0 10% 0; */
     background: white;
     border: 0;
     font-family: Titillium Web;
+    /* font-size: 3vmin; */
+    /* padding: 1.5vmin; */
+    width: 75%;
+    position: relative;
+    height: 7vmin;
+    top: 4vmin;
+    /* text-decoration: underline; */
+    box-shadow: 0.5vmin 0.5vmin black;
 }
 
 .bubble {
@@ -87,37 +94,37 @@ small#tagline {
   }
   
   .sort_by small {
-      /* width: 100%; */
-      text-align: center;
-      font-size: x-small;
-      color: white;
-      margin: 1vw;
+    text-align: center;
+    font-size: x-small;
+    color: white;
+    margin: 1vw;
   }
 
   .sort_by .col-sm-2 {
-      background: black;
-      height: 3vw;
-      padding: 0;
+    background: black;
+    height: 3vw;
+    padding: 0;
+    white-space: nowrap;
   }
 
   .sort_by .col-sm-2:hover {
-      background: grey;
+    background: grey;
   }
 
   .all:hover{
-      border-bottom: 3px solid white;
+    border-bottom: 3px solid white;
   }
   
   .web:hover{
-      border-bottom: 3px solid blue;
+    border-bottom: 3px solid blue;
   }
   
   .graphic:hover{
-      border-bottom: 3px solid green;
+    border-bottom: 3px solid green;
   }
   
   .architect:hover{
-      border-bottom: 3px solid goldenrod;
+    border-bottom: 3px solid goldenrod;
   }
   
   .photo:hover{
@@ -158,11 +165,9 @@ small#tagline {
 
   div.polaroid {
     text-align: center;
-    margin: 0.9vw;
-    /* padding: 1vw; */
+    margin: 2vmin;
     border: 1.5vmin solid white;
     overflow: hidden;
-    /* height: 33vw; */
     text-align: center;
     background: white;
   }
@@ -190,14 +195,16 @@ small#tagline {
 
   .polaroid p {
     width: 100%;
-    height: 11vmin;
-    line-height: 1.2;
+/*    height: 11vmin;
+*/    line-height: 1.2;
     background: white;
     margin: 0 0 0 0;
     padding: 0;
     border-top: 1vw solid black;
-    z-index: 2;
-  }
+    /* z-index: 2; */
+  
+    white-space: nowrap;
+}
 
 
   .polaroid.graphic p{
@@ -249,3 +256,27 @@ small#tagline {
     border-color: purple;
     color: purple;
   }
+  
+  @media screen and (max-width: 768px) {
+    div.polaroid {
+      margin: 6vmin;
+    }
+
+    #links button {
+      font-size: 4vmin;      
+    }
+
+    div.sort_by {
+      display: none;
+    }    
+  }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
