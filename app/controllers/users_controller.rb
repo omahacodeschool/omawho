@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_login
+
   def index
     @users = User.paginate(1)
   end
@@ -9,14 +11,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
+    auto_login(user)
     redirect_to user_path(user.username)
   end
 
   def user_params
-    params[:user][:crypted_password] = BCrypt::Password.create(params[:user][:crypted_password])
-    params[:user][:email].downcase!
-    params[:user][:username].downcase!
-    params.require(:user).permit(:email, :crypted_password, :salt, :username)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
   def new
