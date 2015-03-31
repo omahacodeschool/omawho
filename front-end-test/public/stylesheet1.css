@@ -1,220 +1,112 @@
 
 img#quiz {
-  position: fixed;
-  display: block;
-  width: 7.5vw;
-  right: 3.2vw;
-  top: 0.6vw;
-  font-size: 8vw;
-  background: white;
-  border: 2px solid white;
-  border-radius: 100%;
-}
-
-h1.title {
-  font-size: 9vw;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  color: rgb(0, 0, 105);
-  margin: -1vw;
-  right: 10vw;
-  position: absolute;
-}
-
-nav {
-  width: 95%;
-  margin: 0 auto 0 auto;
-  height: 9vw;
-  position: relative;
-  z-index: 1;
-  text-align: right;
-  border-bottom: 2px solid;
-  background: white;
-}
-
-div#dropdown {
-    position: relative;
-    background: grey;
-    width: 40vw;
-    height: 9vw;
-    text-align: center;
-}
-
-select {
-  margin: 2.5vw auto 3vw auto;
-  width: 35vw;
-  background: white;
-  border-radius: 0px;
-  height: 4vw;
-  font-size: 2.5vw;
-}
-
-body {
-  margin: 0;
-  background: lightgrey;
-  background: url('map.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-div.grid {
-  width: 100%;
-  right: 0;
-  text-align: center;
-  overflow: visible;
-  padding-top: 0;
-}
-
-div.polaroid {
-  width: 30vw;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  margin: 1vw;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-div.polaroid img {
-  width: 100%;
-  margin: 0 0 -0.5vw 0;
-  -webkit-filter: opacity(50%);
-}
-
-.polaroid img:hover {
-  -webkit-filter: initial;
-}
-
-.polaroid span {
-  font-family: sans-serif;
-  display: block;
-  margin: 0.5vw;
-  font-size: medium;
-}
-
-span.user_name {
-  font-weight: bold;
-  font-size: large;
-}
-
-.polaroid p {
-  width: 100%;
-  height: 8vw;
-  background: white;
-  margin: 0;
-  padding: 0.5vw 0 0.5vw 0;
-  border-bottom: 1px solid black;
-  border-top: 1vw solid black;
-  bottom: 0;
-  z-index: 2;
-}
-
-
-.polaroid.graphics p{
-  border-color: green;
-  color: darkgreen;
-}
-
-.polaroid.web p{
-  border-color: blue;
-  color: darkblue;
-}
-
-.polaroid.photo p{
-  border-color: red;
-  color: maroon;
-}
-
-.polaroid.fashion p{
-  border-color: violet;
-  color: darkviolet;
-}
-
-.polaroid.architect p{
-  border-color: goldenrod;
-  color: darkgoldenrod;
-}
-
-.polaroid.writing p{
-  border-color: saddlebrown;
-  color: saddlebrown;
-}
-
-.polaroid.community p{
-  border-color: lime;
-  color: green;
-}
-
-.polaroid.nonprofit p{
-  border-color: salmon;
-  color: DarkSalmon;
-}
-
-.polaroid.sales p{
-  border-color: orange;
-  color: DarkOrange;
-}
-
-@media screen and (max-width: 600px) {
-
-  div.polaroid{
-    width:80vw;
-    height:95vw;
-  }
-
-  div.polaroid p{
-    height:15vw;
-    border-top: 3vw solid;
-  }
-  
-  img#quiz {
-    position: fixed;
-    display: block;
-    width: 11vw;
-    right: 1.2vw;
-    top: 1.6vw;
-    font-size: 8vw;
-    background: white;
-    border: 2px solid white;
-    border-radius: 100%;
+    width: 7.5vw;
   }
 
   h1.title {
-    font-size: 14vw;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    color: rgb(0, 0, 105);
-    margin: -1vw;
-    right: 15vw;
-    position: absolute;
+    display:inline-block
   }
 
   nav {
-    width: 100%;
-    margin: 0 auto 0 auto;
-    height: 30vw;
-    position: relative;
-    z-index: 1;
-    text-align: right;
     border-bottom: 2px solid;
     background: white;
   }
 
-  div#dropdown {
-      position: absolute;
-      bottom: 0;
+  div#links {
+      position: relative;
       background: grey;
-      width: 100%;
-      height: 15vw;
       text-align: center;
   }
 
-  select {
-    margin: 2.5vw auto 3vw auto;
-    width: 90vw;
-    background: white;
-    border-radius: 0px;
-    height: 10vw;
-    font-size: 6vw;
+  body {
+    background: lightgrey;
+    background: url('map.jpg');
+    background-size: cover;
+    background-attachment: fixed;
   }
 
-}
+  div.polaroid {
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  div.polaroid img {
+    width: 100%;
+
+    -webkit-filter: opacity(50%);
+  }
+
+  .polaroid img:hover {
+    -webkit-filter: initial;
+  }
+
+  .polaroid span {
+    font-family: sans-serif;
+    display: block;
+    margin: 0.5vw;
+    font-size: medium;
+  }
+
+  span.user_name {
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .polaroid p {
+    width: 100%;
+    height: 8vw;
+    background: white;
+    margin: 0;
+    padding: 0.5vw 0 0.5vw 0;
+    border-bottom: 1px solid black;
+    border-top: 1vw solid black;
+    bottom: 0;
+    z-index: 2;
+  }
+
+
+  .polaroid.graphics p{
+    border-color: green;
+    color: darkgreen;
+  }
+
+  .polaroid.web p{
+    border-color: blue;
+    color: darkblue;
+  }
+
+  .polaroid.photo p{
+    border-color: red;
+    color: maroon;
+  }
+
+  .polaroid.fashion p{
+    border-color: violet;
+    color: darkviolet;
+  }
+
+  .polaroid.architect p{
+    border-color: goldenrod;
+    color: darkgoldenrod;
+  }
+
+  .polaroid.writing p{
+    border-color: saddlebrown;
+    color: saddlebrown;
+  }
+
+  .polaroid.community p{
+    border-color: lime;
+    color: green;
+  }
+
+  .polaroid.nonprofit p{
+    border-color: salmon;
+    color: DarkSalmon;
+  }
+
+  .polaroid.sales p{
+    border-color: orange;
+    color: DarkOrange;
+  }
