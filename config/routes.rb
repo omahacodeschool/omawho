@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   scope path: "/users", controller: :users do
     get 'forgotpassword' => :forgot_password_form, as: 'forgot_password'
-    post 'forgotpassword' => :assign_new_password
+    post 'forgotpassword' => 'users#assign_new_password'
   end
 
 
