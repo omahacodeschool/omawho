@@ -4,16 +4,19 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :categories
+
+  #This generates '/users/:id' routes. ':id' actually refers to username
   resources :users do
     member do
       get "/delete" => "users#request_destroy"
     end
   end
 
-scope path: "/users", controller: :users do
-  get 'forgotpassword' => :forgot_password_form
-  post 'forgotpassword' => :assign_new_password
-end
+
+  scope path: "/users", controller: :users do
+    get 'forgotpassword' => :forgot_password_form
+    post 'forgotpassword' => :assign_new_password
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

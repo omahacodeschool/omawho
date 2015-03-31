@@ -43,11 +43,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:id])
   end
 
   def update
-    user = User.find(params[:id])
+    user = User.find_by_username(params[:id])
     user.update_attributes(params[:user])
     @message = "Profile updated successfully!"
     redirect_to edit_user_path(user)
