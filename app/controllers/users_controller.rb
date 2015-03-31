@@ -2,11 +2,12 @@ class UsersController < ApplicationController
   before_filter :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
-    @users = User.paginate(1)
+    @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(1)
   end
 
   def page
-    @users = User.paginate(params[:number])
+    @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(params[:num])
+    @users.to_json
   end
 
   def create
