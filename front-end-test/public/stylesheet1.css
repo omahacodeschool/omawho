@@ -18,8 +18,6 @@ h1.title {
   color: rgb(0, 0, 105);
   margin: -1vw;
   right: 10vw;
-  /* padding: 0; */
-  /* top: 0; */
   position: absolute;
 }
 
@@ -69,7 +67,6 @@ div.grid {
 
 div.polaroid {
   width: 30vw;
-  height: 38vw;
   display: inline-block;
   text-align: center;
   position: relative;
@@ -79,12 +76,8 @@ div.polaroid {
 
 div.polaroid img {
   width: 100%;
-  padding-top: 1vw;
-  padding-bottom: 0;
-  padding: 0;
-  margin: 0;
+  margin: 0 0 -0.5vw 0;
   -webkit-filter: opacity(50%);
-  z-index: 1;
 }
 
 .polaroid img:hover {
@@ -107,67 +100,57 @@ span.user_name {
   width: 100%;
   height: 8vw;
   background: white;
-  margin: -0.7vw auto 0 auto;
+  margin: 0;
   padding: 0.5vw 0 0.5vw 0;
   border-bottom: 1px solid black;
   border-top: 1vw solid black;
-  position: absolute;
   bottom: 0;
+  z-index: 2;
 }
 
 
 .polaroid.graphics p{
-  /* border-bottom: 1px solid green; */
-  /* border-top: 1vw solid green; */
   border-color: green;
   color: darkgreen;
 }
 
 .polaroid.web p{
-  border-bottom: 1px solid blue;
-  border-top: 1vw solid blue;
+  border-color: blue;
   color: darkblue;
 }
 
 .polaroid.photo p{
-  border-bottom: 1px solid red;
-  border-top: 1vw solid red;
+  border-color: red;
   color: maroon;
 }
 
 .polaroid.fashion p{
-  border-bottom: 1px solid violet;
-  border-top: 1vw solid violet;
+  border-color: violet;
   color: darkviolet;
 }
 
 .polaroid.architect p{
-  border-bottom: 1px solid goldenrod;
-  border-top: 1vw solid goldenrod;
+  border-color: goldenrod;
   color: darkgoldenrod;
 }
 
 .polaroid.writing p{
-  border-bottom: 1px solid saddlebrown;
-  border-top: 1vw solid saddlebrown;
+  border-color: saddlebrown;
   color: saddlebrown;
 }
 
 .polaroid.community p{
-  border-bottom: 1px solid lime;
-  border-top: 1vw solid lime;
+  border-color: lime;
   color: green;
 }
 
 .polaroid.nonprofit p{
-  border-bottom: 1px solid salmon;
-  border-top: 1vw solid salmon;
+  border-color: salmon;
   color: DarkSalmon;
 }
 
 .polaroid.sales p{
-  border-bottom: 1px solid orange;
-  border-top: 1vw solid orange;
+  border-color: orange;
   color: DarkOrange;
 }
 

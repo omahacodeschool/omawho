@@ -1,18 +1,32 @@
-window.onload = {
-  var infoBoxesOn = 1;
+infoBoxesOn = 1;
+
+window.onload = function(){
   $("img#quiz").click(toggleGlobalInfo);
   $infoBoxes = $(".polaroid p");
-  $(".polaroid").click(toggleThisInfo);
-  
-  function toggleGlobalinfo(){
-    if infoBoxesOn == true {
-      $infoBoxes.css('display','none');
-      infoBoxesOn = false;
-    };
-    if infoBoxesOn == false {
-      $infoBoxes.css('display','block');
-      infoBoxesOn = true;
-    };
+  $(".polaroid img").each(function(){
+    this.click(toggleThisInfo)
+  });
+};
+
+function toggleGlobalInfo() {
+  if (infoBoxesOn == true) {
+    $infoBoxes.css('display','none');
+    infoBoxesOn = false;
+    return;
+  } else {
+    $infoBoxes.css('display','block');
+    infoBoxesOn = true;
   };
-  
+};
+
+function toggleThisInfo(){
+  if (this.siblings()[0].css('display') == 'none'){
+    this.siblings()[0].css('display','block');
+  } else {
+    this.siblings()[0].css('display','none');
+  }
+};
+
+function testFunction(){
+  console.log('YUP');
 }
