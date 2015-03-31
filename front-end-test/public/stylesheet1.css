@@ -74,11 +74,58 @@ small#tagline {
       padding: 0;
   }
 
-  .sort_by .col-sm-2:hover{
+  .sort_by .col-sm-2:hover {
       background: grey;
-      border-bottom: 3px solid red;
   }
 
+  .all:hover{
+      border-bottom: 3px solid white;
+  }
+  
+  .web:hover{
+      border-bottom: 3px solid blue;
+  }
+  
+  .graphic:hover{
+      border-bottom: 3px solid green;
+  }
+  
+  .architect:hover{
+      border-bottom: 3px solid goldenrod;
+  }
+  
+  .photo:hover{
+      border-bottom: 3px solid red;
+  }
+  
+  .art:hover{
+      border-bottom: 3px solid yellow;
+  }
+ 
+  .fashion:hover{
+      border-bottom: 3px solid violet;
+  }
+  
+  .writing:hover{
+      border-bottom: 3px solid saddlebrown;
+  }
+  
+  .venture:hover{
+      border-bottom: 3px solid purple;
+  }
+  
+  .community:hover{
+      border-bottom: 3px solid lime;
+  }
+  
+  .nonprofit:hover{
+      border-bottom: 3px solid salmon;
+  }
+  
+  .sales:hover{
+      border-bottom: 3px solid orange;
+  }
+   
   .container.sort_by {
       margin-top: 1vw;
   }
@@ -127,7 +174,7 @@ small#tagline {
   }
 
 
-  .polaroid.graphics p{
+  .polaroid.graphic p{
     border-color: green;
     color: darkgreen;
   }
@@ -170,4 +217,9 @@ small#tagline {
   .polaroid.sales p{
     border-color: orange;
     color: DarkOrange;
+  }
+  
+  .polaroid.venture p{
+    border-color: purple;
+    color: purple;
   }
