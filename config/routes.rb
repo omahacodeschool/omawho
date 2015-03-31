@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :password_resets
+  
+  get 'password_resets/create'
+
+  get 'password_resets/edit'
+
+  get 'password_resets/update'
+
   root "users#index"
 
   get '/page/:number' => 'users#page'
