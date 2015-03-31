@@ -3,18 +3,25 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :categories
+  get '/category/:category_name' => 'categories#show', as: 'category'
 
-  #This generates '/users/:id' routes. ':id' actually refers to username
-  resources :users do
-    member do
-      get "/delete" => "users#request_destroy"
-    end
-  end
 
+  get '/:username' => "users#show", as: 'user'
+  get '/:username/edit' => "users#edit", as: 'edit_user'
+  post '/:username' => "users#update"
+
+  get '/users/new' => 'users#new', as: 'new_user'
+  post '/users' => 'users#create'
+
+  get '/:username/delete' => 'users#request_destroy', as: 'delete_user'
+  post '/:username/delete' => 'users#destroy'
+
+  get '/login' => 'users#login', as: 'login'
+  post '/login' => 'sessions#create'
+  get '/:username/logout' => 'sessions#destroy', as: 'logout'
 
   scope path: "/users", controller: :users do
-    get 'forgotpassword' => :forgot_password_form
+    get 'forgotpassword' => :forgot_password_form, as: 'forgot_password'
     post 'forgotpassword' => :assign_new_password
   end
 

@@ -5,13 +5,14 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to user_path(user)
+    redirect_to user_path(user.username)
   end
 
   def user_params
     params[:user][:crypted_password] = BCrypt::Password.create(params[:user][:crypted_password])
     params[:user][:email].downcase!
-    params.require(:user).permit(:email, :crypted_password, :salt)
+    params[:user][:username].downcase!
+    params.require(:user).permit(:email, :crypted_password, :salt, :username)
   end
 
   def new
@@ -39,22 +40,23 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find_by_username(params[:id])
+    @user = User.find_by_username(params[:username])
   end
 
   def show
-    @user = User.find_by_username(params[:id])
+    @user = User.find_by_username(params[:username])
   end
 
   def update
-    user = User.find_by_username(params[:id])
+    user = User.find_by_username(params[:username])
     user.update_attributes(params[:user])
+    user.save
     @message = "Profile updated successfully!"
-    redirect_to edit_user_path(user)
+    redirect_to user_path(user.username)
   end
 
   def request_destroy
-    if session[:user] && session[:user]["username"] == params[:id]
+    if session[:user] && session[:user]["username"] == params[:username]
       render :request_destroy
     else
       @message = "You do not have permission"
@@ -63,10 +65,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if session[:user] && session[:user]["id"] == params[:id]
-      user = User.find(params[:id])
+    if session[:user] && session[:user]["username"] == params[:username]
+      user = User.find(session[:user]["id"])
       user.destroy
-      redirect_to "/"
+      @message = "Your account has been deleted"
+      render :error_message
     else
       @message = "You do not have permission"
       render :error_message
