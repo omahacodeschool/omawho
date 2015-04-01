@@ -118,52 +118,56 @@ input.cool {
   .sort_by .col-sm-2:hover {
     background: grey;
   }
+  
+  h1.graphic{
+    border-bottom: 1vw solid green;
+  }
 
-  .all:hover{
+  .sort_by .all:hover{
     border-bottom: 3px solid white;
   }
   
-  .web:hover{
+  .sort_by .web:hover{
     border-bottom: 3px solid blue;
   }
   
-  .graphic:hover{
+  .sort_by .graphic:hover{
     border-bottom: 3px solid green;
   }
   
-  .architect:hover{
+  .sort_by .architect:hover{
     border-bottom: 3px solid goldenrod;
   }
   
-  .photo:hover{
+  .sort_by .photo:hover{
       border-bottom: 3px solid red;
   }
   
-  .art:hover{
+  .sort_by .art:hover{
       border-bottom: 3px solid yellow;
   }
  
-  .fashion:hover{
+  .sort_by .fashion:hover{
       border-bottom: 3px solid violet;
   }
   
-  .writing:hover{
+  .sort_by .writing:hover{
       border-bottom: 3px solid saddlebrown;
   }
   
-  .venture:hover{
+  .sort_by .venture:hover{
       border-bottom: 3px solid purple;
   }
   
-  .community:hover{
+  .sort_by .community:hover{
       border-bottom: 3px solid lime;
   }
   
-  .nonprofit:hover{
+  .sort_by .nonprofit:hover{
       border-bottom: 3px solid salmon;
   }
   
-  .sales:hover{
+  .sort_by .sales:hover{
       border-bottom: 3px solid orange;
   }
    
@@ -279,6 +283,13 @@ input.cool {
     display: none;
   }
   
+  select {
+    background-color: lightgrey) !important;
+    width: 75%;
+    color: white;
+    font-family: Rokkitt;
+  }
+  
   @media screen and (max-width: 768px) {
     div.polaroid {
       margin: 6vmin;
@@ -300,10 +311,6 @@ input.cool {
       font-family: Rokkitt;
       font-size: 4vmin; 
     }
- 
-    div.sort_by_mobile_mode select {
-      background-color: rgba(0,0,0,0.5) !important;
-    }
 
     .bubble#upwards{
       width: 15vw;
@@ -322,7 +329,8 @@ input.cool {
   }
   
   .block{
-    background-color: rgba(107, 107, 107, 0.7)
+    background-color: rgba(107, 107, 107, 0.7);
+    margin-top: 1vw;
   }
   
   .block h1{
@@ -343,7 +351,11 @@ input.cool {
     text-align: center;
     color: white;
   }
-    
-  select {
-    width: 100%;
+  
+  .rokkitt{
+    font-family: Rokkitt;
+  }
+  
+  .block a{
+    color:white;
   }
