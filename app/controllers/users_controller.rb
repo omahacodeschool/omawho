@@ -13,11 +13,11 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     auto_login(user)
-    redirect_to user_path(user.username)
+    redirect_to edit_user_path(user.username)
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :username, :password, :password_confirmation)
   end
 
   def admin_email
@@ -44,6 +44,11 @@ class UsersController < ApplicationController
 
 
   def edit
+    @categories = Category.all
+    @categories_array = []
+    @categories.each do |x|
+      @categories_array.push x.name
+    end
     @user = User.find_by_username(params[:username])
   end
 
