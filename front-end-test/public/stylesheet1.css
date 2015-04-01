@@ -45,7 +45,7 @@ small#tagline {
     text-transform: uppercase;
 }
 
-#links button {
+button.cool {
     background: white;
     border: 0;
     font-family: Titillium Web;
@@ -55,6 +55,18 @@ small#tagline {
     top: 4vmin;
     box-shadow: 0.5vmin 0.5vmin black;
 }
+
+input.cool {
+  background: white;
+  border: 0;
+  font-family: Titillium Web;
+  margin: 4vmin;
+  position: relative;
+  height: 7vmin;
+  top: 4vmin;
+  box-shadow: 0.5vmin 0.5vmin black;
+}
+
 
 .bubble {
     width: 11vmin;
@@ -86,6 +98,7 @@ small#tagline {
     background: url('map.jpg');
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Titillium Web' !important;
   }
   
   .sort_by small {
@@ -299,4 +312,38 @@ small#tagline {
       background:
     }    
   }
+  
+  .category_block label {
+    display: block;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .block{
+    background-color: rgba(107, 107, 107, 0.7)
+  }
+  
+  .block h1{
+    background: rgb(158, 158, 158);
+    color: white;
+    padding: 2vmin;
+    text-transform: capitalize;
+  }
+  
+  .block h3{
+    background: lightgrey;
+    color: black;
+    padding: 1vmin;
+    text-transform: capitalize;
+  }
+  
+  .block h4{
+    text-align: center;
+    color: white;
+  }
     
+  select {
+    width: 100%;
+  }
