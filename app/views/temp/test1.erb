@@ -1,4 +1,4 @@
-<%= render partial: '/partials/navbar' %>
+<%= erb :'partials/_navbar.html' %>
 <div class="container sort_by">
   <div class="row">
     <div class="col-sm-2 all"><small class="sorter">All</small></div>
@@ -42,7 +42,7 @@
       
     <div class="col-md-3 col-sm-4">
       <div class="polaroid graphic" id="01" >
-        <%= image_tag ('pic01.jpg')%>
+        <img src="/pic01.jpg"></img>
         <p>
           <span class="user_name">Joe Schmo</span>
           <span class="category_name"><medium>Graphic Designer</medium></span>
@@ -52,7 +52,7 @@
     
     <div class="col-md-3 col-sm-4">
       <div class="polaroid web" id="02" >
-        <%= image_tag ('pic01.jpg')%>
+        <img src="/pic02.jpg"></img>
         <p>
           <span class="user_name">Jane Doe</span>
           <span class="category_name">Web & Software</span>
@@ -62,7 +62,7 @@
     
     <div class="col-md-3 col-sm-4">
       <div class="polaroid photo" id="03" >
-        <%= image_tag ('pic02.jpg')%>
+        <img src="/pic03.jpg"></img>
         <p>
           <span class="user_name">Jimmy Smith</span>
           <span class="category_name">Photography</span>

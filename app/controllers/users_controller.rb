@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :request_destroy]
 
   def index
-    @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(1)
+    #@users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(1)
   end
 
   def page
