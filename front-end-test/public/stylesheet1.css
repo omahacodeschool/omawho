@@ -257,6 +257,10 @@ small#tagline {
     color: purple;
   }
   
+  div.sort_by_mobile_mode {
+    display: none;
+  }
+  
   @media screen and (max-width: 768px) {
     div.polaroid {
       margin: 6vmin;
@@ -268,7 +272,20 @@ small#tagline {
 
     div.sort_by {
       display: none;
-    }    
+    }
+    
+    div.sort_by_mobile_mode {
+      display: block;
+      color: white;
+      text-align: center;
+      margin-top: 3vmin;
+      font-family: Rokkitt;
+      font-size: 4vmin; 
+    }
+ 
+    select {
+      background-color: rgba(0,0,0,0.5) !important;
+    }
   }
     
     
