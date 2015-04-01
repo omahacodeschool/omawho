@@ -1,19 +1,18 @@
 class SessionsController < ApplicationController
-  
+  def new
+    render text: "This is the login page"
+  end
+
   def create
-    user = User.find_by_email(params[:user][:email].downcase)
-    if user && BCrypt::Paassword.new(user.password) == params[:user][:password]
-      session[:user] = user
+    if @user = login(params[:email], params[:password], params[:remember_me])
       redirect_to root_path
     else
-      @message = "Incorrect email or password."
-      render "users/login"
+      redirect_to login_path, notice: "Incorrect username or password"
     end
   end
-  
+
   def destroy
-    reset_session
+    logout
     redirect_to root_path
   end
-  
 end
