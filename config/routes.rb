@@ -1,39 +1,35 @@
 Rails.application.routes.draw do
-  resources :password_resets
-  
-  get 'password_resets/create'
-
-  get 'password_resets/edit'
-
-  get 'password_resets/update'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root "users#index"
 
+  get '/admin/email'
+
   get '/page/:number' => 'users#page'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :password_resets
+  get 'password_resets/create'
+  get 'password_resets/edit'
+  get 'password_resets/update'
 
   get '/category/:category_name' => 'categories#show', as: 'category'
-
-
-  get '/:username' => "users#show", as: 'user'
-  get '/:username/edit' => "users#edit", as: 'edit_user'
-  post '/:username' => "users#update"
-
-  get '/users/new' => 'users#new', as: 'new_user'
-  post '/users' => 'users#create'
-
-  get '/:username/delete' => 'users#request_destroy', as: 'delete_user'
-  post '/:username/delete' => 'users#destroy'
 
   get '/login' => 'sessions#new', as: 'login'
   post '/login' => 'sessions#create'
   get '/:username/logout' => 'sessions#destroy', as: 'logout'
 
   scope path: "/users", controller: :users do
+    post '/' => 'users#create'
+    get 'new' => 'users#new', as: 'new_user'
     get 'forgotpassword' => :forgot_password_form, as: 'forgot_password'
     post 'forgotpassword' => 'users#assign_new_password'
   end
+
+  get '/:username' => "users#show", as: 'user'
+  post '/:username' => "users#update"
+  get '/:username/edit' => "users#edit", as: 'edit_user'
+  get '/:username/delete' => 'users#request_destroy', as: 'delete_user'
+  post '/:username/delete' => 'users#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_login, only: [:edit, :request_destroy, :destroy]
+  before_action :require_login, only: [:edit, :request_destroy]
 
   def index
     @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(1)
@@ -20,12 +20,19 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
-  def new
+  def admin_email
+    if session[:admin]
+      render :admin_email
+    else
+      flash.notice = "Forbidden: requires administrator access"
+      render :error_message
+    end
+  end
 
+  def new
   end
 
   def login
-
   end
 
   def forgot_password_form
@@ -33,14 +40,6 @@ class UsersController < ApplicationController
 
   def assign_new_password
     @user = User.find_by_email(params[:user][:email.downcase])
-    random_password = Array.new(10).map { (65 + rand(58)).chr }.join
-    @user.crypted_password = random_password
-    if @user.save
-      Mailer.create_and_deliver_password_change(@user, random_password)
-    else
-      @message = "Assign new password failed"
-      render :error_message
-    end
   end
 
 
