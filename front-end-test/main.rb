@@ -27,3 +27,7 @@ end
 get "/sorcery" do
   erb :new_password, :layout => :'layout1'
 end
+
+get "/delete" do 
+  erb :delete, :layout => :'layout1'
+end
