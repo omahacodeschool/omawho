@@ -16,6 +16,13 @@ class UsersController < ApplicationController
     auto_login(user)
     redirect_to edit_user_path(user.username)
   end
+  
+  def edit_params
+    params.require(:user).permit(:email, :username, :primary_category, 
+    :first_name, :last_name, :avatar, :bio, :website, :company, :company_site, 
+    :facebook, :dribbble, :twitter, :linkedin, :github, :pinterest, :instagram, 
+    :tagline, :tumblr, :googleplus)
+  end
 
   def user_params
     params.require(:user).permit(:email, :username, :password, :primary_category, 
@@ -61,7 +68,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by_username(params[:username])
-    user.update_attributes(params[:user])
+    user.update_attributes(edit_params)
     user.save
     @message = "Profile updated successfully!"
     redirect_to user_path(user.username)
