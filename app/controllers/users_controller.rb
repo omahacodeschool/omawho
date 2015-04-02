@@ -2,12 +2,11 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
-    @users = User.all
-    # byebug
+    @users = User.all.page(1)
   end
 
   def page
-    @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(params[:num])
+    @users = User.all.page(params[:page])
     @users.to_json
   end
 
@@ -18,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, 
+    params.require(:user).permit(:email, :username, :password,
     :password_confirmation, :first_name, :last_name)
   end
 
