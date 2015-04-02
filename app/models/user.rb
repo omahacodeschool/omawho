@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   mount_uploader :avatar, AvatarUploader
+
+  def full_name
+    first_name + " " + last_name
+  end
 end

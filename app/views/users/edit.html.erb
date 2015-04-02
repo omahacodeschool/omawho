@@ -1,7 +1,7 @@
 <%= form_for :user, url: "#{@user.username}" do |f| %>
 
 <h1>Profile picture:</h1>
-<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:thumb) %>
 
 <h1>Your primary information:</h1>
 
