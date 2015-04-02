@@ -29,3 +29,5 @@ Category.create(name: "Writing")
 Category.create(name: "Web Programming")
 Category.create(name: "Freelance")
 Category.create(name: "Hamburger Flipper")
+
+# Make sure you comment out the validate statements in user.rb first, before running seed data.
