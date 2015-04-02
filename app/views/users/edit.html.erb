@@ -1,57 +1,192 @@
-<%= form_for :user, url: "#{@user.username}" do |f| %>
+<%= render 'partials/navbar.html' %>
+<div class="container block">
+  <h1>Edit Your Profile</h1>
+  <hr>
+  <div class="row">
+    <%= form_for :user, url: "/#{@user.username}", html: { class: "form-horizontal", role: "form"} do |f| %>
+    
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <div class="col-md-9 personal-info">
 
-<h1>Profile picture:</h1>
-<%= image_tag @user.avatar.url(:thumb) %>
+          <h3>Personal Info</h3>
+        
+          <div class="form-group">
+            <%= f.label :first_name, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :last_name, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :username, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :username, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :email, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :tagline, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :tagline, class: "form-control" %>
+            </div>
+          </div>
+          
+          <h3>Select Speciality</h3>
+          <h4>Select a primary speciality:</h4>
+          <div class="form-group">
+             <label class="col-xs-2 col-md-3 control-label">Category:</label>
+             <div class="col-xs-offset-2 col-md-8">
+               <%= f.select :primary_category, options_from_collection_for_select(@categories, :id, :name, @user.primary_category) %>
+             </div>
+          </div>
+          <!-- <div class="form-group">
+            <h4>Select any other skills:</h4>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-3 category_block">
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Web & Software
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Graphic Design
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Architecture & Interior Design
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Photography
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Music/Film/Art
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Fashion
+                </label>
+              </div>
+              
+              
+              <div class="col-sm-3 category_block">
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Writing
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Venture Capital
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Community Connector
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Non-Profit
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Sales & Marketing
+                </label>
+              </div>
+            </div>
+          </div> -->
+          
+          <h3>Add Your Portfolio</h3>
+          <h4>These fields are optional</h4>
+          
+          <div class="form-group">
+            <%= f.label :company, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :company, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :company_site, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :company_site, class: "form-control" %>
+            </div>
+          </div>
+         <div class="form-group">
+           <%= f.label :twitter, class: "col-md-3 control-label" %>
+           <div class="col-md-8">
+             <%= f.text_field :twitter, class: "form-control" %>
+           </div>
+         </div>
+          <div class="form-group">
+            <%= f.label :facebook, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :facebook, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :github, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :github, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :dribbble, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :dribbble, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :pinterest, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :pinterest, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :linkedin, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :linkedin, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :instagram, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :instagram, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :website, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_field :website, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :bio, class: "col-md-3 control-label" %>
+            <div class="col-md-8">
+              <%= f.text_area :bio, class: "form-control", rows: "8" %>
+            </div>
+          </div>
 
-<h1>Your primary information:</h1>
-
-<%= f.label :first_name %>:<br>
-<%= f.text_field :first_name, :placeholder => "First Name" %><br>
-<%= f.label :last_name %>:<br>
-<%= f.text_field :last_name, :placeholder => "Last Name" %><br>
-<%= f.label :Username %>:<br>
-<%= f.text_field :username, :placeholder => "Username" %><br>
-<%= f.label :email %>:<br>
-<%= f.text_field :email, :placeholder => "Email" %><br>
-<%= f.label :password %>:<br>
-<%= f.password_field :password, :placeholder => "Password" %><br>
-<%= f.label :tagline %>:<br>
-<%= f.text_field :tagline, :placeholder => "Tag Line" %><br><br>
-
-<h1>Choose a primary category (what do you do?):</h1>
-
-<%= f.select(:primary_category, options_from_collection_for_select(@categories, :id, :name, @user.primary_category)) %><br><br>
-
-<h1>Add additional categories (if you wear many hats):</h1>
-
-<!-- add category list here -->
-
-<h1>Tell us more about yourself (completely optional!):</h1>
-
-<%= f.label :company %>:<br>
-<%= f.text_field :company, :placeholder => "Company" %><br>
-<%= f.label :company_site %>:<br>
-<%= f.text_field :company_site, :placeholder => "Company Website" %><br>
-
-<%= f.label :twitter %>:<br>
-<%= f.text_field :twitter, :placeholder => "Twitter" %><br>
-<%= f.label :facebook %>:<br>
-<%= f.text_field :facebook, :placeholder => "Facebook" %><br>
-<%= f.label :github %>:<br>
-<%= f.text_field :github, :placeholder => "Github" %><br>
-<%= f.label :dribbble %>:<br>
-<%= f.text_field :dribbble, :placeholder => "Dribbble" %><br>
-<%= f.label :pinterest %>:<br>
-<%= f.text_field :pinterest, :placeholder => "Pinterest" %> <br>
-<%= f.label :linkedin %>:<br>
-<%= f.text_field :linkedin, :placeholder => "LinkedIn" %>  <br>
-<%= f.label :googleplus %>:<br>
-<%= f.text_field :googleplus, :placeholder => "Google Plus" %><br>
-<%= f.label :instagram %>:<br>
-<%= f.text_field :instagram, :placeholder => "Instagram" %> <br>
-<%= f.label :website %>:<br>
-<%= f.text_field :website, :placeholder => "Personal Website" %><br>
-<%= f.label :bio %>:<br>
-<%= f.text_area :bio, :placeholder => "Quick Bio (600 char max)", :rows => 10, :maxlength => 600 %><br>
-<%= f.submit "Submit" %><br>
-<% end %>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="text-center">
+            <%= f.submit "Save your changes" %>
+          </div>
+        </div>
+        
+        <!-- <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="text-center">
+            <input type="button" class="delete" value="Delete Profile">
+          </div>
+        </div> -->
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr>
