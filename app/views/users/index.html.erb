@@ -1,0 +1,51 @@
+<%= render partial: '/partials/navbar' %>
+<div class="container sort_by">
+  <div class="row">
+    <div class="col-sm-2 all"><small class="sorter">All</small></div>
+    <div class="col-sm-2 web"><small class="sorter">Web & Software</small></div>
+    <div class="col-sm-2 graphic"><small class="sorter">Graphic Design</small></div>
+    <div class="col-sm-2 architect"><small class="sorter">Archit. & Int. Design</small></div>
+    <div class="col-sm-2 photo"><small class="sorter">Photography</small></div>
+    <div class="col-sm-2 art"><small class="sorter">Music/Film/Art</small></div>
+    <div class="col-sm-2 fashion"><small class="sorter">Fashion</small></div>
+    <div class="col-sm-2 writing"><small class="sorter">Writing</small></div>
+    <div class="col-sm-2 venture"><small class="sorter">Venture Capital</small></div>
+    <div class="col-sm-2 community"><small class="sorter">Community Connector</small></div>
+    <div class="col-sm-2 nonprofit"><small class="sorter">Non-Profit</small></div>
+    <div class="col-sm-2 sales"><small class="sorter">Sales & Marketing</small></div>
+  </div>
+</div>
+
+<div class="container sort_by_mobile_mode">
+  <div class="row">
+    <select>
+      <option>Faces By Category</option>
+      <option><div class="col-sm-2 all"><small class="sorter">All</small></div></option>
+      <option><div class="col-sm-2 web"><small class="sorter">Web & Software</small></div></option>
+      <option><div class="col-sm-2 graphic"><small class="sorter">Graphic Design</small></div></option>
+      <option><div class="col-sm-2 architect"><small class="sorter">Archit. & Int. Design</small></div></option>
+      <option><div class="col-sm-2 photo"><small class="sorter">Photography</small></div></option>
+      <option><div class="col-sm-2 art"><small class="sorter">Music/Film/Art</small></div></option>
+      <option><div class="col-sm-2 fashion"><small class="sorter">Fashion</small></div></option>
+      <option><div class="col-sm-2 writing"><small class="sorter">Writing</small></div></option>
+      <option><div class="col-sm-2 venture"><small class="sorter">Venture Capital</small></div></option>
+      <option><div class="col-sm-2 community"><small class="sorter">Community Connector</small></div></option>
+      <option><div class="col-sm-2 nonprofit"><small class="sorter">Non-Profit</small></div></option>
+      <option><div class="col-sm-2 sales"><small class="sorter">Sales & Marketing</small></div></option>
+    </select>
+  </div>
+</div>
+
+<div class="container">
+  
+  <div class="row">
+      
+    <% @users.each do |user| %>
+      <% @user= user %>
+      <%= render partial: 'partials/polaroid' %>
+    <% end %>
+    
+  </div>
+
+</div>
+<div class="bubble" id="upwards">^</div>

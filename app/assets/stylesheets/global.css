@@ -1,0 +1,349 @@
+
+img#quiz {
+    width: 7vw;
+    display: inline-block;
+    margin: -6.5vmin 0 0 0;
+}
+
+  h1.title {
+    font-family: Titillium Web;
+    display:inline-block;
+    font-size: 11vmin;
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 0 0;
+}
+
+  nav {
+    border-bottom: 2px solid;
+    background: white;
+  }
+
+  div#links {
+  height: 15vmin;    
+  background: grey;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#links a {
+    color: black;
+    margin-top: 4vw;
+    width: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+small#tagline {
+    font-family: Titillium Web;
+    width: 100%;
+    display: block;
+    letter-spacing: 0.40vmin;
+    font-size: 2vmin;
+    text-transform: uppercase;
+}
+
+button.cool {
+    background: white;
+    border: 0;
+    font-family: Titillium Web;
+    width: 75%;
+    position: relative;
+    height: 7vmin;
+    top: 4vmin;
+    box-shadow: 0.5vmin 0.5vmin black;
+}
+
+input.cool {
+  background: white;
+  border: 0;
+  font-family: Titillium Web;
+  margin: 4vmin;
+  position: relative;
+  height: 7vmin;
+  top: 4vmin;
+  box-shadow: 0.5vmin 0.5vmin black;
+}
+
+
+.bubble {
+    width: 11vmin;
+    height: 11vmin;
+    background: black;
+    text-align: center;
+    color: white;
+    font-family: Rokkitt;
+    font-size: 9.5vmin;
+    line-height: 0.9;
+    border-radius: 100%;
+    border: 4px solid white;
+    display: inline-block;
+    line-height: 1.1;
+    vertical-align: bottom;
+    position: relative;
+    bottom: 56.3%;
+}
+
+.bubble#upwards {
+    position: fixed;
+    bottom: 2vmin;
+    left: 2vw;
+    line-height: 1.2;
+}
+
+  body {
+    background: lightgrey;
+    background: url('map.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Titillium Web' !important;
+  }
+  
+  .sort_by small {
+    text-align: center;
+    font-size: x-small;
+    color: white;
+    margin: 1vw;
+  }
+
+  .sort_by .col-sm-2 {
+    background: black;
+    height: 3vw;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .sort_by .col-sm-2:hover {
+    background: grey;
+  }
+
+  .all:hover{
+    border-bottom: 3px solid white;
+  }
+  
+  .web:hover{
+    border-bottom: 3px solid blue;
+  }
+  
+  .graphic:hover{
+    border-bottom: 3px solid green;
+  }
+  
+  .architect:hover{
+    border-bottom: 3px solid goldenrod;
+  }
+  
+  .photo:hover{
+      border-bottom: 3px solid red;
+  }
+  
+  .art:hover{
+      border-bottom: 3px solid yellow;
+  }
+ 
+  .fashion:hover{
+      border-bottom: 3px solid violet;
+  }
+  
+  .writing:hover{
+      border-bottom: 3px solid saddlebrown;
+  }
+  
+  .venture:hover{
+      border-bottom: 3px solid purple;
+  }
+  
+  .community:hover{
+      border-bottom: 3px solid lime;
+  }
+  
+  .nonprofit:hover{
+      border-bottom: 3px solid salmon;
+  }
+  
+  .sales:hover{
+      border-bottom: 3px solid orange;
+  }
+   
+  .container.sort_by {
+      margin-top: 1vw;
+  }
+
+  div.polaroid {
+    text-align: center;
+    margin: 2vmin;
+    border: 1.5vmin solid white;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+  }
+
+  div.polaroid img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .polaroid:hover{
+   border: 1.5vmin solid rgba(255, 255, 255, 0);
+  
+   background: rgba(123, 122, 117, 0.5);
+}
+
+  .polaroid span {
+    font-family: Rokkitt;
+    display: block;
+    margin: 0.5vw;
+    font-size: small;
+  }
+
+  span.user_name {
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .polaroid p {
+    width: 100%;
+    line-height: 1.2;
+    background: white;
+    margin: 0 0 0 0;
+    padding: 0;
+    border-top: 1vw solid black;
+    white-space: nowrap;
+}
+
+.polaroid p.quiz_mode{
+  position: absolute;
+  width: 70%;
+  margin-top: -25%;
+  left: 15%;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  display: block;
+}
+
+
+  .polaroid.graphic p{
+    border-color: green;
+    color: darkgreen;
+  }
+
+  .polaroid.web p{
+    border-color: blue;
+    color: darkblue;
+  }
+
+  .polaroid.photo p{
+    border-color: red;
+    color: maroon;
+  }
+
+  .polaroid.fashion p{
+    border-color: violet;
+    color: darkviolet;
+  }
+
+  .polaroid.architect p{
+    border-color: goldenrod;
+    color: darkgoldenrod;
+  }
+
+  .polaroid.writing p{
+    border-color: saddlebrown;
+    color: saddlebrown;
+  }
+
+  .polaroid.community p{
+    border-color: lime;
+    color: green;
+  }
+
+  .polaroid.nonprofit p{
+    border-color: salmon;
+    color: DarkSalmon;
+  }
+
+  .polaroid.sales p{
+    border-color: orange;
+    color: DarkOrange;
+  }
+  
+  .polaroid.venture p{
+    border-color: purple;
+    color: purple;
+  }
+  
+  div.sort_by_mobile_mode {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    div.polaroid {
+      margin: 6vmin;
+    }
+
+    #links button {
+      font-size: 4vmin;      
+    }
+
+    div.sort_by {
+      display: none;
+    }
+    
+    div.sort_by_mobile_mode {
+      display: block;
+      color: white;
+      text-align: center;
+      margin-top: 3vmin;
+      font-family: Rokkitt;
+      font-size: 4vmin; 
+    }
+ 
+    div.sort_by_mobile_mode select {
+      background-color: rgba(0,0,0,0.5) !important;
+    }
+
+    .bubble#upwards{
+      width: 15vw;
+      height: 15vw;
+      font-size:15vw;
+      background:
+    }    
+  }
+  
+  .category_block label {
+    display: block;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .block{
+    background-color: rgba(107, 107, 107, 0.7)
+  }
+  
+  .block h1{
+    background: rgb(158, 158, 158);
+    color: white;
+    padding: 2vmin;
+    text-transform: capitalize;
+  }
+  
+  .block h3{
+    background: lightgrey;
+    color: black;
+    padding: 1vmin;
+    text-transform: capitalize;
+  }
+  
+  .block h4{
+    text-align: center;
+    color: white;
+  }
+    
+  select {
+    width: 100%;
+  }

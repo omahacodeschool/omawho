@@ -1,4 +1,18 @@
+<h1>Login</h1>
 
+  <%= form_tag user_session_path, :method => :post do %>
+   <div class="field">
+     <%= label_tag :email %><br />
+     <%= text_field_tag :email %>
+   </div>
+   <div class="field">
+     <%= label_tag :password %><br />
+     <%= password_field_tag :password %>
+   </div>
+   <div class="actions">
+     <%= submit_tag "Login" %>
+   </div>
+  <% end %>
 
-<h1>Forgot Password?</h1>
+<h2>Forgot Password?</h2>
 <%= render 'forgot_password_form' %>

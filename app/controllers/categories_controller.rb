@@ -13,7 +13,11 @@ class CategoriesController < ApplicationController
 
   def show
     category = Category.find(params[:category_id])
-    @users = category.users
+    if params[:page]
+      @users = category.users.page(params[:page])
+    else
+      @users = category.users.page(1)
+    end
   end
 
   def update
