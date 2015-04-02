@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:edit, :request_destroy]
+  before_action :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
     @users = User.all
@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation)
+    params.require(:user).permit(:email, :username, :password, 
+    :password_confirmation, :first_name, :last_name)
   end
 
   def admin_email
@@ -54,7 +55,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_username(params[:username])
+    if @user = User.find_by_username(params[:username])
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -66,24 +71,13 @@ class UsersController < ApplicationController
   end
 
   def request_destroy
-    if session[:user] && session[:user]["username"] == params[:username]
-      render :request_destroy
-    else
-      @message = "You do not have permission"
-      render :error_message
-    end
+    @username = params[:username]
   end
 
   def destroy
-    if session[:user] && session[:user]["username"] == params[:username]
-      user = User.find(session[:user]["id"])
-      user.destroy
-      @message = "Your account has been deleted"
-      render :error_message
-    else
-      @message = "You do not have permission"
-      render :error_message
-    end
+    user = User.find_by_username(params[:username])
+    user.destroy
+    redirect_to root_path, notice: "Your account has been deleted."
   end
 
   def crypted_password
