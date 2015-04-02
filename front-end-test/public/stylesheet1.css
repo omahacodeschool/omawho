@@ -60,13 +60,19 @@ input.cool {
   background: white;
   border: 0;
   font-family: Titillium Web;
-  margin: 4vmin;
-  position: relative;
-  height: 7vmin;
-  top: 4vmin;
+  margin: 2vmin;
+  padding: 0 3vw 0 3vw;
   box-shadow: 0.5vmin 0.5vmin black;
 }
 
+input.delete {
+  background: rgb(123, 25, 25);
+  color: white;
+  border: 0;
+  font-family: Titillium Web;
+  padding: 0 3vw 0 3vw;
+  box-shadow: 0.5vmin 0.5vmin black;
+}
 
 .bubble {
     width: 11vmin;
@@ -101,6 +107,50 @@ input.cool {
     font-family: 'Titillium Web' !important;
   }
   
+  h1.web-software{
+    border-bottom: 1.5vmin solid blue;
+  }
+  
+  h1.graphic-design{
+    border-bottom: 1.5vmin solid green;
+  }
+  
+  h1.architecture-interior-design{
+    border-bottom: 1.5vmin solid goldenrod;
+  }
+  
+  h1.photography{
+      border-bottom: 1.5vmin solid red;
+  }
+  
+  h1.music-film-art{
+      border-bottom: 1.5vmin solid yellow;
+  }
+ 
+  h1.fashion{
+      border-bottom: 1.5vmin solid violet;
+  }
+  
+  h1.writing{
+      border-bottom: 1.5vmin solid saddlebrown;
+  }
+  
+  h1.venture-capital{
+      border-bottom: 1.5vmin solid purple;
+  }
+  
+  h1.community-connector{
+      border-bottom: 1.5vmin solid lime;
+  }
+  
+  h1.non-profit{
+      border-bottom: 1.5vmin solid salmon;
+  }
+  
+  h1.sales-marketing{
+      border-bottom: 1.5vmin solid orange;
+  }
+  
   .sort_by small {
     text-align: center;
     font-size: x-small;
@@ -119,51 +169,51 @@ input.cool {
     background: grey;
   }
 
-  .all:hover{
+  .sort_by .all:hover{
     border-bottom: 3px solid white;
   }
   
-  .web:hover{
+  .sort_by .web-software:hover{
     border-bottom: 3px solid blue;
   }
   
-  .graphic:hover{
+  .sort_by .graphic-design:hover{
     border-bottom: 3px solid green;
   }
   
-  .architect:hover{
+  .sort_by .architecture-interior-design:hover{
     border-bottom: 3px solid goldenrod;
   }
   
-  .photo:hover{
+  .sort_by .photography:hover{
       border-bottom: 3px solid red;
   }
   
-  .art:hover{
+  .sort_by .music-film-art:hover{
       border-bottom: 3px solid yellow;
   }
  
-  .fashion:hover{
+  .sort_by .fashion:hover{
       border-bottom: 3px solid violet;
   }
   
-  .writing:hover{
+  .sort_by .writing:hover{
       border-bottom: 3px solid saddlebrown;
   }
   
-  .venture:hover{
+  .sort_by .venture-capital:hover{
       border-bottom: 3px solid purple;
   }
   
-  .community:hover{
+  .sort_by .community-connector:hover{
       border-bottom: 3px solid lime;
   }
   
-  .nonprofit:hover{
+  .sort_by .non-profit:hover{
       border-bottom: 3px solid salmon;
   }
   
-  .sales:hover{
+  .sort_by .sales-marketing:hover{
       border-bottom: 3px solid orange;
   }
    
@@ -186,10 +236,9 @@ input.cool {
     margin: 0;
   }
 
-  .polaroid:hover{
-   border: 1.5vmin solid rgba(255, 255, 255, 0);
-  
-   background: rgba(123, 122, 117, 0.5);
+  .polaroid:hover img{
+    -webkit-filter: contrast(1.3);
+    -webkit-filter: brightness(1.2);
 }
 
   .polaroid span {
@@ -225,17 +274,17 @@ input.cool {
 }
 
 
-  .polaroid.graphic p{
+  .polaroid.graphic-design p{
     border-color: green;
     color: darkgreen;
   }
 
-  .polaroid.web p{
+  .polaroid.web-software p{
     border-color: blue;
     color: darkblue;
   }
 
-  .polaroid.photo p{
+  .polaroid.photography p{
     border-color: red;
     color: maroon;
   }
@@ -245,7 +294,7 @@ input.cool {
     color: darkviolet;
   }
 
-  .polaroid.architect p{
+  .polaroid.architecture-interior-design p{
     border-color: goldenrod;
     color: darkgoldenrod;
   }
@@ -255,28 +304,35 @@ input.cool {
     color: saddlebrown;
   }
 
-  .polaroid.community p{
+  .polaroid.community-connector p{
     border-color: lime;
     color: green;
   }
 
-  .polaroid.nonprofit p{
+  .polaroid.non-profit p{
     border-color: salmon;
     color: DarkSalmon;
   }
 
-  .polaroid.sales p{
+  .polaroid.sales-marketing p{
     border-color: orange;
     color: DarkOrange;
   }
   
-  .polaroid.venture p{
+  .polaroid.venture-capital p{
     border-color: purple;
     color: purple;
   }
   
   div.sort_by_mobile_mode {
     display: none;
+  }
+  
+  select {
+    background: rgba(72, 72, 72, 0.5) !important;
+    width: 75%;
+    color: white !important;
+    /* font-family: Rokkitt; */
   }
   
   @media screen and (max-width: 768px) {
@@ -300,10 +356,6 @@ input.cool {
       font-family: Rokkitt;
       font-size: 4vmin; 
     }
- 
-    div.sort_by_mobile_mode select {
-      background-color: rgba(0,0,0,0.5) !important;
-    }
 
     .bubble#upwards{
       width: 15vw;
@@ -322,15 +374,22 @@ input.cool {
   }
   
   .block{
-    background-color: rgba(107, 107, 107, 0.7)
-  }
+    background-color: rgba(107, 107, 107, 0.7);
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding-top: 1vw;
+  
+    padding-bottom: 3vw;
+}
   
   .block h1{
     background: rgb(158, 158, 158);
     color: white;
     padding: 2vmin;
     text-transform: capitalize;
-  }
+  
+    margin: 0;
+}
   
   .block h3{
     background: lightgrey;
@@ -343,7 +402,34 @@ input.cool {
     text-align: center;
     color: white;
   }
-    
-  select {
+  
+  .rokkitt{
+    font-family: Rokkitt;
+  }
+  
+  .block a{
+    color:white;
+  }
+  
+  h2.rokkitt {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .site_table td {
+    width: 50%;
+  }
+  
+  div.profile_pic {
+    text-align: center;
+    margin: 0;
+    border: 1.5vmin solid white;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+  }
+  
+  .profile_pic img{
     width: 100%;
   }
+  

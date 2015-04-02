@@ -1,0 +1,212 @@
+<%= erb :'partials/_navbar.html' %>
+<div class="container block">
+  <h1>Edit Your Profile</h1>
+  <hr>
+  <div class="row">
+    <form class="form-horizontal" role="form">
+    
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <div class="col-md-9 personal-info">
+
+          <h3>Personal Info</h3>
+        
+          <div class="form-group">
+            <label class="col-md-3 control-label">First name:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Last name:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Email:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Tag Line:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          
+          <h3>Select Speciality</h3>
+          <h4>Select a primary speciality:</h4>
+          <div class="form-group">
+             <label class="col-xs-2 col-md-3 control-label">Category:</label>
+             <div class="col-xs-offset-2 col-md-8">
+               <select name="primary_category">
+                 <option>Select A Category</option>
+                 <option>All</option>
+                 <option>Web &amp; Software</option>
+                 <option>Graphic Design</option>
+                 <option>Archit. &amp; Int. Design</option>
+                 <option>Photography</option>
+                 <option>Music/Film/Art</option>
+                 <option>Fashion</option>
+                 <option>Writing</option>
+                 <option>Venture Capital</option>
+                 <option>Community Connector</option>
+                 <option>Non-Profit</option>
+                 <option>Sales &amp; Marketing</option>
+               </select>
+             </div>
+          </div>
+          <div class="form-group">
+            <h4>Select any other skills:</h4>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-3 category_block">
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Web & Software  
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Graphic Design
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Architecture & Interior Design
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Photography
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Music/Film/Art
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Fashion
+                </label>
+              </div>
+              
+              
+              <div class="col-sm-3 category_block">
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Writing
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Venture Capital
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Community Connector
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Non-Profit
+                </label>
+                <label class="">
+                  <input type="checkbox" name="inlineRadioOptions" value=""> Sales & Marketing
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <h3>Add Your Portfolio</h3>
+          <h4>These fields are optional</h4>
+          
+          <div class="form-group">
+            <label class="col-md-3 control-label">Company:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Company Website:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Twitter:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Facebook:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Github:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Dribble:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Pinterest:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">LinkedIn:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Instagram:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Personal Website:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Bio:</label>
+            <div class="col-md-8">
+              <textarea class="form-control" rows="8" type="text" value=""></textarea>
+            </div>
+          </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="text-center">
+            <input type="button" class="cool" value="Save Your Changes">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="text-center">
+            <input type="button" class="delete" value="Delete Profile">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<hr>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/admin/email'
 
-  get '/page/:number' => 'users#page'
+  get '/page/:page' => 'users#page'
 
   resources :password_resets
   get 'password_resets/create'
@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   get 'password_resets/update'
 
   get '/category/:category_name' => 'categories#show', as: 'category'
+  get '/category/:category_name/page/:page' => 'categories#show'
 
   get '/login' => 'sessions#new', as: 'login'
-  post '/login' => 'sessions#create'
-  get '/:username/logout' => 'sessions#destroy', as: 'logout'
+  post '/login' => 'sessions#create', as: 'user_session'
+  get '/logout' => 'sessions#destroy', as: 'logout'
 
   scope path: "/users", controller: :users do
     post '/' => 'users#create'
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   post '/:username' => "users#update"
   get '/:username/edit' => "users#edit", as: 'edit_user'
   get '/:username/delete' => 'users#request_destroy', as: 'delete_user'
-  post '/:username/delete' => 'users#destroy'
+  post '/:username/delete' => 'users#destroy', as: 'confirm_delete_user'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,24 +1,25 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:edit, :request_destroy]
+  before_action :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
-    @users = User.all
-    # byebug
+    @users = User.all.page(1)
   end
 
   def page
-    @users = User.joins(:categories).all.select("users.first_name, users.last_name, categories.name AS category").paginate(params[:num])
+    @users = User.all.page(params[:page])
     @users.to_json
   end
 
   def create
-    user = User.create(user_params)
+    user = User.new(user_params)
+    user.save!
     auto_login(user)
     redirect_to edit_user_path(user.username)
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation)
+    params.require(:user).permit(:email, :username, :password, :primary_category, 
+    :password_confirmation, :first_name, :last_name, :avatar)
   end
 
   def admin_email
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @categories = Category.all
   end
 
   def login
@@ -46,15 +48,15 @@ class UsersController < ApplicationController
 
   def edit
     @categories = Category.all
-    @categories_array = []
-    @categories.each do |x|
-      @categories_array.push x.name
-    end
     @user = User.find_by_username(params[:username])
   end
 
   def show
-    @user = User.find_by_username(params[:username])
+    if @user = User.find_by_username(params[:username])
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -66,24 +68,13 @@ class UsersController < ApplicationController
   end
 
   def request_destroy
-    if session[:user] && session[:user]["username"] == params[:username]
-      render :request_destroy
-    else
-      @message = "You do not have permission"
-      render :error_message
-    end
+    @username = params[:username]
   end
 
   def destroy
-    if session[:user] && session[:user]["username"] == params[:username]
-      user = User.find(session[:user]["id"])
-      user.destroy
-      @message = "Your account has been deleted"
-      render :error_message
-    else
-      @message = "You do not have permission"
-      render :error_message
-    end
+    user = User.find_by_username(params[:username])
+    user.destroy
+    redirect_to root_path, notice: "Your account has been deleted."
   end
 
   def crypted_password

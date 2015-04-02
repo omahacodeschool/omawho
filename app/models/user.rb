@@ -4,11 +4,17 @@ class User < ActiveRecord::Base
   has_many :categories_users
   has_many :categories, through: :categories_users
 
-  self.per_page = 16
+  #self.per_page = 16
 
   validates :password, length: { minimum: 3 }
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
-  
+
   validates :email, uniqueness: true
+
+  mount_uploader :avatar, AvatarUploader
+
+  def full_name
+    first_name + " " + last_name
+  end
 end

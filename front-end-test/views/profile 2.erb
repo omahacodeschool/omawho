@@ -1,0 +1,41 @@
+<%= erb :'partials/_navbar.html' %>
+<div class="container block">
+  <div class="row">
+    <div class="col-sm-6">
+      
+      <div class="profile_pic" >
+        <img src="/pic01.jpg">
+<!--THIS NEEDS TO FIND THE USERS IMAGE -->
+      </div>
+      
+    </div>
+    <div class="col-sm-6">
+      <h1 class="<%= Category.find(@user.primary_category).short_category_name %> rokkitt"><%= @user.full_name %></h1>
+      <h2 class="rokkitt"><%= Category.find(@user.primary_category).name.capitalize %></h2>
+      <p class="tagline">"<%= @user.tagline %>"</p>
+      <hr>
+      <h2 class="rokkitt">Bio:</h2>
+        <p><%= @user.bio %>      </p>
+      
+      <h2 class="rokkitt">Other Skills:</h2>
+      <ul>
+        <li>Web & Software</li>
+        <li>Fashion</li>
+      </ul>
+<!--NOT SURE HOW TO CALL THE LI SKILLS YET -->
+      <table class="site_table">
+        <tr><td><strong>Personal Site:</strong></td> <td><a href='<%= @user.website %>'><%= @user.website %></a></td></tr>
+        <tr><td><strong>Company Site:</strong></td> <td><a href='<%= @user.company_site %>'><%= @user.company %></a></td></tr>
+      </table>
+      
+      <hr>
+      <select>
+<!-- NEED A HASH TO MAKE THIS WORK -->
+        <option selected disabled>Connect With Me On Social Media</option>
+        <option>Facebook</option>
+        <option>Twitter</option>
+        <option>Dribbble</option>
+      </select>
+    </div>
+  </div>
+</div>
