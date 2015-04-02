@@ -20,7 +20,7 @@
 
 <h1>Choose a primary category (what do you do?):</h1>
 
-<%= f.select(:primary_category, options_for_select(@categories_array)) %><br><br>
+<%= f.select(:primary_category, options_from_collection_for_select(@categories, :id, :name, @user.primary_category)) %><br><br>
 
 <h1>Add additional categories (if you wear many hats):</h1>
 

@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password,
+    params.require(:user).permit(:email, :username, :password, :primary_category, 
     :password_confirmation, :first_name, :last_name, :avatar)
   end
 
@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @categories = Category.all
   end
 
   def login
@@ -47,10 +48,6 @@ class UsersController < ApplicationController
 
   def edit
     @categories = Category.all
-    @categories_array = []
-    @categories.each do |x|
-      @categories_array.push x.name
-    end
     @user = User.find_by_username(params[:username])
   end
 

@@ -1,7 +1,8 @@
 <p>
   <%= form_for :user, url: "/users" do |f| %>
     <h3>Choose photo</h3>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar %><br><br>
+    <%= f.select(:primary_category, options_from_collection_for_select(@categories, :id, :name)) %><br><br>
     <%= f.text_field :first_name, :placeholder => "First Name" %><br>
     <%= f.text_field :last_name, :placeholder => "Last Name" %><br>
     <%= f.text_field :username, :placeholder => "Username" %><br>
