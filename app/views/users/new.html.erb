@@ -1,6 +1,7 @@
 <p>
   <%= form_for :user, url: "/users" do |f| %>
-
+    <h3>Choose photo</h3>
+    <%= f.file_field :avatar %>
     <%= f.text_field :first_name, :placeholder => "First Name" %><br>
     <%= f.text_field :last_name, :placeholder => "Last Name" %><br>
     <%= f.text_field :username, :placeholder => "Username" %><br>

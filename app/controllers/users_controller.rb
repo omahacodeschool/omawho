@@ -11,14 +11,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
+    user = User.new(user_params)
+    user.save!
     auto_login(user)
     redirect_to edit_user_path(user.username)
   end
 
   def user_params
     params.require(:user).permit(:email, :username, :password,
-    :password_confirmation, :first_name, :last_name)
+    :password_confirmation, :first_name, :last_name, :avatar)
   end
 
   def admin_email
