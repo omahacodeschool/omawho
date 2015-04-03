@@ -22,7 +22,7 @@ img#quiz {
 
   div#links {
   height: 15vmin;    
-  background: grey;
+  background: gray;
   display: table-cell;
   vertical-align: middle;
 }
@@ -100,7 +100,7 @@ input.delete {
 }
 
   body {
-    background: lightgrey;
+    background: #D3D3D3;
     background: url('map.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -166,7 +166,7 @@ input.delete {
   }
 
   .sort_by .col-sm-2:hover {
-    background: grey;
+    background: gray;
   }
 
   .sort_by .all:hover{
@@ -361,7 +361,6 @@ input.delete {
       width: 15vw;
       height: 15vw;
       font-size:15vw;
-      background:
     }    
   }
   
