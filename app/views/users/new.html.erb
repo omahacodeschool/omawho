@@ -63,7 +63,7 @@
           <div class="form-group">
              <label class="col-xs-2 col-md-3 control-label">Category:</label>
              <div class="col-xs-offset-2 col-md-8">
-               <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name, @user.category_id) %>
+               <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
              </div>
           </div>
 
