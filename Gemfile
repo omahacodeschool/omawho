@@ -2,12 +2,11 @@ source 'https://rubygems.org'
 
 gem 'kaminari'
 #gem 'will_paginate', '~> 3.0.5'
-gem "fog-aws"
-gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: [:production]
 # Use SCSS for stylesheets
@@ -33,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 gem 'rmagick'
 gem 'carrierwave'
+gem "fog-aws"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
