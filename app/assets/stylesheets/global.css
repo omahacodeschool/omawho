@@ -101,7 +101,7 @@ input.delete {
 
   body {
     background: #D3D3D3;
-    background: url('map.jpg');
+    background: url('/assets/map.jpg');
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
