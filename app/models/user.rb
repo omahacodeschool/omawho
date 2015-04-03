@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   #self.per_page = 16
 
-
+  # add password_confirmation
   validates :password, presence: true, length: { minimum: 6 }, if: ->(record) { record.new_record? || record.password.present? }
 
   validates :email, uniqueness: true
