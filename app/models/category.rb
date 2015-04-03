@@ -24,17 +24,17 @@ class Category < ActiveRecord::Base
       User.create(first_name: "Noobi", last_name: "Queen", username: "NoobiQ", category_id: 3, email: "skjnklj8@gmail.com", password: 'password', password_confirmation: 'password', salt: "piueywhh7")
       User.create(first_name: "Raul", last_name: "Branson", username: "RaulB", category_id:2, email: "poosjidsjk@gmail.com", password: 'password', password_confirmation: 'password', salt: "sudy77yuhu")
 
-      # create(name: "Graphic Design")
-      # create(name: "Photography")
-      # create(name: "Writing")
-      # create(name: "Web & Software")
-      # create(name: "Music/Film/Art")
-      # create(name: "Fashion")
-      # create(name: "Architecture & Interior Design")
-      # create(name: "Venture Capital")
-      # create(name: "Community Connector")
-      # create(name: "Non-Profit")
-      # create(name: "Sales & Marketing")
+      create(name: "Graphic Design")
+      create(name: "Photography")
+      create(name: "Writing")
+      create(name: "Web & Software")
+      create(name: "Music/Film/Art")
+      create(name: "Fashion")
+      create(name: "Architecture & Interior Design")
+      create(name: "Venture Capital")
+      create(name: "Community Connector")
+      create(name: "Non-Profit")
+      create(name: "Sales & Marketing")
   end
 
 end
