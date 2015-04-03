@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'kaminari'
 #gem 'will_paginate', '~> 3.0.5'
-
+gem "fog-aws"
 gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
