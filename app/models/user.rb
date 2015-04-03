@@ -1,15 +1,18 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  has_many :categories_users
-  has_many :categories, through: :categories_users
+  belongs_to :category
 
   #self.per_page = 16
 
   # add password_confirmation
   validates :password, presence: true, confirmation: true, length: { minimum: 6 }, if: ->(record) { record.new_record? || record.password.present? }
   validates :password_confirmation, presence: true, if: ->(record) { record.new_record? || record.password.present? }
-  
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :bio, length: { maximum: 400 }
+  validates :tagline, length: { maximum: 30 }
+
 
   validates :email, uniqueness: true
 

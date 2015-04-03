@@ -16,16 +16,16 @@ class UsersController < ApplicationController
     auto_login(user)
     redirect_to edit_user_path(user.username)
   end
-  
+
   def edit_params
-    params.require(:user).permit(:email, :username, :primary_category, 
-    :first_name, :last_name, :avatar, :bio, :website, :company, :company_site, 
-    :facebook, :dribbble, :twitter, :linkedin, :github, :pinterest, :instagram, 
+    params.require(:user).permit(:email, :username, :category_id,
+    :first_name, :last_name, :avatar, :bio, :website, :company, :company_site,
+    :facebook, :dribbble, :twitter, :linkedin, :github, :pinterest, :instagram,
     :tagline, :tumblr, :googleplus)
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :primary_category, 
+    params.require(:user).permit(:email, :username, :password, :category_id,
     :password_confirmation, :first_name, :last_name, :avatar)
   end
 

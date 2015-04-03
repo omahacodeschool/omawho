@@ -4,20 +4,20 @@
   <hr>
   <div class="row">
     <%= form_for :user, url: "#{@user.username}", html: { class: "form-horizontal", role: "form"} do |f| %>
-    
+
       <div class="col-md-3">
         <div class="text-center">
           <img src="//placehold.it/100" class="avatar img-thumbnail" alt="avatar">
           <h6>Upload a different photo...</h6>
-          
+
           <input type="file" class="form-control">
         </div>
       </div>
-      
+
       <div class="col-md-9 personal-info">
 
           <h3>Personal Info</h3>
-        
+
           <div class="form-group">
             <%= f.label :first_name, class: "col-md-3 control-label" %>
             <div class="col-md-8">
@@ -48,13 +48,13 @@
               <%= f.text_field :tagline, class: "form-control" %>
             </div>
           </div>
-          
+
           <h3>Select Speciality</h3>
           <h4>Select a primary speciality:</h4>
           <div class="form-group">
              <label class="col-xs-2 col-md-3 control-label">Category:</label>
              <div class="col-xs-offset-2 col-md-8">
-               <%= f.select :primary_category, options_from_collection_for_select(@categories, :id, :name, @user.primary_category) %>
+               <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name, @user.category_id) %>
              </div>
           </div>
           <!-- <div class="form-group">
@@ -80,8 +80,8 @@
                   <input type="checkbox" name="inlineRadioOptions" value=""> Fashion
                 </label>
               </div>
-              
-              
+
+
               <div class="col-sm-3 category_block">
                 <label class="">
                   <input type="checkbox" name="inlineRadioOptions" value=""> Writing
@@ -101,10 +101,10 @@
               </div>
             </div>
           </div> -->
-          
+
           <h3>Add Your Portfolio</h3>
           <h4>These fields are optional</h4>
-          
+
           <div class="form-group">
             <%= f.label :company, class: "col-md-3 control-label" %>
             <div class="col-md-8">
@@ -178,7 +178,7 @@
             <%= f.submit "Save your changes" %>
           </div>
         </div>
-        
+
         <!-- <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="text-center">

@@ -10,8 +10,8 @@
       
     </div>
     <div class="col-sm-6">
-      <h1 class="<%= Category.find(@user.primary_category).short_category_name %> rokkitt"><%= @user.full_name %></h1>
-      <h2 class="rokkitt"><%= Category.find(@user.primary_category).name.titleize %></h2>
+      <h1 class="<%= Category.find(@user.category_id).short_category_name %> rokkitt"><%= @user.full_name %></h1>
+      <h2 class="rokkitt"><%= Category.find(@user.category_id).name.titleize %></h2>
       <p class="tagline">"<%= @user.tagline %>"</p>
       <hr>
       <h2 class="rokkitt">Bio:</h2>
