@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 gem 'rmagick'
 gem 'carrierwave'
+gem "fog"
 gem "fog-aws"
 # Use Unicorn as the app server
 # gem 'unicorn'
