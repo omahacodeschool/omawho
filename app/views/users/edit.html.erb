@@ -16,7 +16,14 @@
       </div>
 
       <div class="col-md-9 personal-info">
-
+        <% if @user && @user.errors.count > 0 %>
+          <div class="form-errors">
+            <p>Please review and correct the following errors:</p>
+            <% @user.errors.each do |key, value| %>
+              <li><%= "#{key} #{value}" %></li>
+            <% end %>
+          </div>
+        <% end %>
           <h3>Personal Info</h3>
 
           <div class="form-group">

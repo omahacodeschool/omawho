@@ -1,4 +1,24 @@
-
+.form-errors {
+  color: white;
+  text-align: center;
+  margin: 0 0 15px 0;
+  padding: 20px;
+  border: solid 1px #a50303;
+  background-color: #a15151;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-errors p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.form-errors li {
+  margin: 5px;
+  text-align: left;
+}
 img#quiz {
     width: 7vw;
     display: inline-block;
@@ -21,7 +41,7 @@ img#quiz {
   }
 
   div#links {
-  height: 15vmin;    
+  height: 15vmin;
   background: gray;
   display: table-cell;
   vertical-align: middle;
@@ -106,51 +126,51 @@ input.delete {
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
   }
-  
+
   h1.web-software{
     border-bottom: 1.5vmin solid blue;
   }
-  
+
   h1.graphic-design{
     border-bottom: 1.5vmin solid green;
   }
-  
+
   h1.architecture-interior-design{
     border-bottom: 1.5vmin solid goldenrod;
   }
-  
+
   h1.photography{
       border-bottom: 1.5vmin solid red;
   }
-  
+
   h1.music-film-art{
       border-bottom: 1.5vmin solid yellow;
   }
- 
+
   h1.fashion{
       border-bottom: 1.5vmin solid violet;
   }
-  
+
   h1.writing{
       border-bottom: 1.5vmin solid saddlebrown;
   }
-  
+
   h1.venture-capital{
       border-bottom: 1.5vmin solid purple;
   }
-  
+
   h1.community-connector{
       border-bottom: 1.5vmin solid lime;
   }
-  
+
   h1.non-profit{
       border-bottom: 1.5vmin solid salmon;
   }
-  
+
   h1.sales-marketing{
       border-bottom: 1.5vmin solid orange;
   }
-  
+
   .sort_by small {
     text-align: center;
     font-size: x-small;
@@ -172,51 +192,51 @@ input.delete {
   .sort_by .all:hover{
     border-bottom: 3px solid white;
   }
-  
+
   .sort_by .web-software:hover{
     border-bottom: 3px solid blue;
   }
-  
+
   .sort_by .graphic-design:hover{
     border-bottom: 3px solid green;
   }
-  
+
   .sort_by .architecture-interior-design:hover{
     border-bottom: 3px solid goldenrod;
   }
-  
+
   .sort_by .photography:hover{
       border-bottom: 3px solid red;
   }
-  
+
   .sort_by .music-film-art:hover{
       border-bottom: 3px solid yellow;
   }
- 
+
   .sort_by .fashion:hover{
       border-bottom: 3px solid violet;
   }
-  
+
   .sort_by .writing:hover{
       border-bottom: 3px solid saddlebrown;
   }
-  
+
   .sort_by .venture-capital:hover{
       border-bottom: 3px solid purple;
   }
-  
+
   .sort_by .community-connector:hover{
       border-bottom: 3px solid lime;
   }
-  
+
   .sort_by .non-profit:hover{
       border-bottom: 3px solid salmon;
   }
-  
+
   .sort_by .sales-marketing:hover{
       border-bottom: 3px solid orange;
   }
-   
+
   .container.sort_by {
       margin-top: 1vw;
   }
@@ -318,107 +338,107 @@ input.delete {
     border-color: orange;
     color: DarkOrange;
   }
-  
+
   .polaroid.venture-capital p{
     border-color: purple;
     color: purple;
   }
-  
+
   div.sort_by_mobile_mode {
     display: none;
   }
-  
+
   select {
     background: rgba(72, 72, 72, 0.5) !important;
     width: 75%;
     color: white !important;
     /* font-family: Rokkitt; */
   }
-  
+
   @media screen and (max-width: 768px) {
     div.polaroid {
       margin: 6vmin;
     }
 
     #links button {
-      font-size: 4vmin;      
+      font-size: 4vmin;
     }
 
     div.sort_by {
       display: none;
     }
-    
+
     div.sort_by_mobile_mode {
       display: block;
       color: white;
       text-align: center;
       margin-top: 3vmin;
       font-family: Rokkitt;
-      font-size: 4vmin; 
+      font-size: 4vmin;
     }
 
     .bubble#upwards{
       width: 15vw;
       height: 15vw;
       font-size:15vw;
-    }    
+    }
   }
-  
+
   .category_block label {
     display: block;
   }
-  
+
   .text-center {
     text-align: center;
   }
-  
+
   .block{
     background-color: rgba(107, 107, 107, 0.7);
     margin-top: 1vw;
     margin-bottom: 1vw;
     padding-top: 1vw;
-  
+
     padding-bottom: 3vw;
 }
-  
+
   .block h1{
     background: rgb(158, 158, 158);
     color: white;
     padding: 2vmin;
     text-transform: capitalize;
-  
+
     margin: 0;
 }
-  
+
   .block h3{
     background: lightgrey;
     color: black;
     padding: 1vmin;
     text-transform: capitalize;
   }
-  
+
   .block h4{
     text-align: center;
     color: white;
   }
-  
+
   .rokkitt{
     font-family: Rokkitt;
   }
-  
+
   .block a{
     color:white;
   }
-  
+
   h2.rokkitt {
     margin: 0;
     padding: 0;
   }
-  
+
   .site_table td {
     width: 50%;
   }
-  
+
   div.profile_pic {
     text-align: center;
     margin: 0;
@@ -427,8 +447,7 @@ input.delete {
     text-align: center;
     background: white;
   }
-  
+
   .profile_pic img{
     width: 100%;
   }
-  

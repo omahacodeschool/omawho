@@ -11,10 +11,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.save!
-    auto_login(user)
-    redirect_to edit_user_path(user.username)
+    @user = User.new(user_params)
+    if @user.save
+      auto_login(@user)
+      redirect_to edit_user_path(@user.username)
+    else
+      @categories = Category.all
+      render :new
+    end
   end
 
   def edit_params
@@ -67,11 +71,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find_by_username(params[:username])
-    user.update_attributes(edit_params)
-    user.save
-    @message = "Profile updated successfully!"
-    redirect_to user_path(user.username)
+    @user = User.find_by_username(params[:username])
+    if @user.update_attributes(edit_params)
+      @message = "Profile updated successfully!"
+      redirect_to user_path(@user.username)
+    else
+      @categories = Category.all
+      render :edit
+    end
   end
 
   def request_destroy

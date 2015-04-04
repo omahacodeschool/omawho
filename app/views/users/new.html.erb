@@ -1,7 +1,7 @@
 <%= render 'partials/navbar.html' %>
 
 <div class="container block">
-  <h1>Add Your Profile</h1>
+  <h1>Add your profile</h1>
   <hr>
   <div class="row">
     <%= form_for :user, url: "/users", html: { class: "form-horizontal", role: "form"} do |f| %>
@@ -15,7 +15,14 @@
       </div>
 
       <div class="col-md-9 personal-info">
-
+        <% if @user && @user.errors %>
+          <div class="form-errors">
+            <p>Please review and correct the following errors:</p>
+            <% @user.errors.each do |key, value| %>
+              <li><%= "#{key} #{value}" %></li>
+            <% end %>
+          </div>
+        <% end %>
           <h3>Personal Info</h3>
 
           <div class="form-group">
