@@ -1,31 +1,34 @@
 .form-errors {
-  color: white;
-  text-align: center;
-  margin: 0 0 15px 0;
-  padding: 20px;
-  border: solid 1px #a50303;
-  background-color: #a15151;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+    color: white;
+    text-align: center;
+    margin: 0 0 15px 0;
+    padding: 20px;
+    border: solid 1px #a50303;
+    background-color: #a15151;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .form-errors p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.2em;
 }
+
 .form-errors li {
-  margin: 5px;
-  text-align: left;
+    margin: 5px;
+    text-align: left;
 }
+
 img#quiz {
     width: 7vw;
     display: inline-block;
     margin: -6.5vmin 0 0 0;
 }
 
-  h1.title {
+h1.title {
     font-family: Titillium Web;
     display:inline-block;
     font-size: 11vmin;
@@ -35,16 +38,21 @@ img#quiz {
     margin: 0 0 0 0;
 }
 
-  nav {
+.title a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
     border-bottom: 2px solid;
     background: white;
-  }
+}
 
-  div#links {
-  height: 15vmin;
-  background: gray;
-  display: table-cell;
-  vertical-align: middle;
+div#links {
+    height: 15vmin;
+    background: gray;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #links a {
@@ -77,21 +85,21 @@ button.cool {
 }
 
 input.cool {
-  background: white;
-  border: 0;
-  font-family: Titillium Web;
-  margin: 2vmin;
-  padding: 0 3vw 0 3vw;
-  box-shadow: 0.5vmin 0.5vmin black;
+    background: white;
+    border: 0;
+    font-family: Titillium Web;
+    margin: 2vmin;
+    padding: 0 3vw 0 3vw;
+    box-shadow: 0.5vmin 0.5vmin black;
 }
 
 input.delete {
-  background: rgb(123, 25, 25);
-  color: white;
-  border: 0;
-  font-family: Titillium Web;
-  padding: 0 3vw 0 3vw;
-  box-shadow: 0.5vmin 0.5vmin black;
+    background: rgb(123, 25, 25);
+    color: white;
+    border: 0;
+    font-family: Titillium Web;
+    padding: 0 3vw 0 3vw;
+    box-shadow: 0.5vmin 0.5vmin black;
 }
 
 .bubble {
@@ -119,161 +127,161 @@ input.delete {
     line-height: 1.2;
 }
 
-  body {
+body {
     background: #D3D3D3;
     background: url('/assets/map.jpg');
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
-  }
+}
 
-  h1.web-software{
+h1.web-software{
     border-bottom: 1.5vmin solid blue;
-  }
+}
 
-  h1.graphic-design{
+h1.graphic-design{
     border-bottom: 1.5vmin solid green;
-  }
+}
 
-  h1.architecture-interior-design{
+h1.architecture-interior-design{
     border-bottom: 1.5vmin solid goldenrod;
-  }
+}
 
-  h1.photography{
-      border-bottom: 1.5vmin solid red;
-  }
+h1.photography{
+    border-bottom: 1.5vmin solid red;
+}
 
-  h1.music-film-art{
-      border-bottom: 1.5vmin solid yellow;
-  }
+h1.music-film-art{
+    border-bottom: 1.5vmin solid yellow;
+}
 
-  h1.fashion{
-      border-bottom: 1.5vmin solid violet;
-  }
+h1.fashion{
+    border-bottom: 1.5vmin solid violet;
+}
 
-  h1.writing{
-      border-bottom: 1.5vmin solid saddlebrown;
-  }
+h1.writing{
+    border-bottom: 1.5vmin solid saddlebrown;
+}
 
-  h1.venture-capital{
-      border-bottom: 1.5vmin solid purple;
-  }
+h1.venture-capital{
+    border-bottom: 1.5vmin solid purple;
+}
 
-  h1.community-connector{
-      border-bottom: 1.5vmin solid lime;
-  }
+h1.community-connector{
+    border-bottom: 1.5vmin solid lime;
+}
 
-  h1.non-profit{
-      border-bottom: 1.5vmin solid salmon;
-  }
+h1.non-profit{
+    border-bottom: 1.5vmin solid salmon;
+}
 
-  h1.sales-marketing{
-      border-bottom: 1.5vmin solid orange;
-  }
+h1.sales-marketing{
+    border-bottom: 1.5vmin solid orange;
+}
 
-  .sort_by small {
+.sort_by small {
     text-align: center;
     font-size: x-small;
     color: white;
     margin: 1vw;
-  }
+}
 
-  .sort_by .col-sm-2 {
+.sort_by .col-sm-2 {
     background: black;
     height: 3vw;
     padding: 0;
     white-space: nowrap;
-  }
+}
 
-  .sort_by .col-sm-2:hover {
+.sort_by .col-sm-2:hover {
     background: gray;
-  }
+}
 
-  .sort_by .all:hover{
+.sort_by .all:hover{
     border-bottom: 3px solid white;
-  }
+}
 
-  .sort_by .web-software:hover{
+.sort_by .web-software:hover{
     border-bottom: 3px solid blue;
-  }
+}
 
-  .sort_by .graphic-design:hover{
+.sort_by .graphic-design:hover{
     border-bottom: 3px solid green;
-  }
+}
 
-  .sort_by .architecture-interior-design:hover{
+.sort_by .architecture-interior-design:hover{
     border-bottom: 3px solid goldenrod;
-  }
+}
 
-  .sort_by .photography:hover{
-      border-bottom: 3px solid red;
-  }
+.sort_by .photography:hover{
+    border-bottom: 3px solid red;
+}
 
-  .sort_by .music-film-art:hover{
-      border-bottom: 3px solid yellow;
-  }
+.sort_by .music-film-art:hover{
+    border-bottom: 3px solid yellow;
+}
 
-  .sort_by .fashion:hover{
-      border-bottom: 3px solid violet;
-  }
+.sort_by .fashion:hover{
+    border-bottom: 3px solid violet;
+}
 
-  .sort_by .writing:hover{
-      border-bottom: 3px solid saddlebrown;
-  }
+.sort_by .writing:hover{
+    border-bottom: 3px solid saddlebrown;
+}
 
-  .sort_by .venture-capital:hover{
-      border-bottom: 3px solid purple;
-  }
+.sort_by .venture-capital:hover{
+    border-bottom: 3px solid purple;
+}
 
-  .sort_by .community-connector:hover{
-      border-bottom: 3px solid lime;
-  }
+.sort_by .community-connector:hover{
+    border-bottom: 3px solid lime;
+}
 
-  .sort_by .non-profit:hover{
-      border-bottom: 3px solid salmon;
-  }
+.sort_by .non-profit:hover{
+    border-bottom: 3px solid salmon;
+}
 
-  .sort_by .sales-marketing:hover{
-      border-bottom: 3px solid orange;
-  }
+.sort_by .sales-marketing:hover{
+    border-bottom: 3px solid orange;
+}
 
-  .container.sort_by {
-      margin-top: 1vw;
-  }
+.container.sort_by {
+    margin-top: 1vw;
+}
 
-  div.polaroid {
+div.polaroid {
     text-align: center;
     margin: 2vmin;
     border: 1.5vmin solid white;
     overflow: hidden;
     text-align: center;
     background: white;
-  }
+}
 
-  div.polaroid img {
+div.polaroid img {
     width: 100%;
     height: auto;
     margin: 0;
-  }
+}
 
-  .polaroid:hover img{
+.polaroid:hover img{
     -webkit-filter: contrast(1.3);
     -webkit-filter: brightness(1.2);
 }
 
-  .polaroid span {
+.polaroid span {
     font-family: Rokkitt;
     display: block;
     margin: 0.5vw;
     font-size: small;
-  }
+}
 
-  span.user_name {
+span.user_name {
     font-weight: bold;
     font-size: large;
-  }
+}
 
-  .polaroid p {
+.polaroid p {
     width: 100%;
     line-height: 1.2;
     background: white;
@@ -284,175 +292,169 @@ input.delete {
 }
 
 .polaroid p.quiz_mode{
-  position: absolute;
-  width: 70%;
-  margin-top: -25%;
-  left: 15%;
-  background: rgba(255,255,255,0.8);
-  border: none;
-  display: block;
+    position: absolute;
+    width: 70%;
+    margin-top: -25%;
+    left: 15%;
+    background: rgba(255,255,255,0.8);
+    border: none;
+    display: block;
 }
 
 
-  .polaroid.graphic-design p{
+.polaroid.graphic-design p{
     border-color: green;
     color: darkgreen;
-  }
+}
 
-  .polaroid.web-software p{
+.polaroid.web-software p{
     border-color: blue;
     color: darkblue;
-  }
+}
 
-  .polaroid.photography p{
+.polaroid.photography p{
     border-color: red;
     color: maroon;
-  }
+}
 
-  .polaroid.fashion p{
+.polaroid.fashion p{
     border-color: violet;
     color: darkviolet;
-  }
+}
 
-  .polaroid.architecture-interior-design p{
+.polaroid.architecture-interior-design p{
     border-color: goldenrod;
     color: darkgoldenrod;
-  }
+}
 
-  .polaroid.writing p{
+.polaroid.writing p{
     border-color: saddlebrown;
     color: saddlebrown;
-  }
+}
 
-  .polaroid.community-connector p{
+.polaroid.community-connector p{
     border-color: lime;
     color: green;
-  }
+}
 
-  .polaroid.non-profit p{
+.polaroid.non-profit p{
     border-color: salmon;
     color: DarkSalmon;
-  }
+}
 
-  .polaroid.sales-marketing p{
+.polaroid.sales-marketing p{
     border-color: orange;
     color: DarkOrange;
-  }
+}
 
-  .polaroid.venture-capital p{
+.polaroid.venture-capital p{
     border-color: purple;
     color: purple;
-  }
+}
 
-  div.sort_by_mobile_mode {
+div.sort_by_mobile_mode {
     display: none;
-  }
+}
 
-  select {
+select {
     background: rgba(72, 72, 72, 0.5) !important;
     width: 75%;
     color: white !important;
-    /* font-family: Rokkitt; */
-  }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     div.polaroid {
-      margin: 6vmin;
+       margin: 6vmin;
     }
 
     #links button {
-      font-size: 4vmin;
+       font-size: 4vmin;
     }
 
     div.sort_by {
-      display: none;
+       display: none;
     }
 
     div.sort_by_mobile_mode {
-      display: block;
-      color: white;
-      text-align: center;
-      margin-top: 3vmin;
-      font-family: Rokkitt;
-      font-size: 4vmin;
+       display: block;
+       color: white;
+       text-align: center;
+       margin-top: 3vmin;
+       font-family: Rokkitt;
+       font-size: 4vmin;
     }
 
     .bubble#upwards{
-      width: 15vw;
-      height: 15vw;
-      font-size:15vw;
+       width: 15vw;
+       height: 15vw;
+       font-size:15vw;
     }
-  }
+}
 
-  .category_block label {
+.category_block label {
     display: block;
-  }
+}
 
-  .text-center {
+.text-center {
     text-align: center;
   }
 
-  .block{
+.block{
     background-color: rgba(107, 107, 107, 0.7);
     margin-top: 1vw;
     margin-bottom: 1vw;
     padding-top: 1vw;
-
     padding-bottom: 3vw;
 }
 
-  .block h1{
+.block h1{
     background: rgb(158, 158, 158);
     color: white;
     padding: 2vmin;
     text-transform: capitalize;
-
     margin: 0;
 }
 
-  .block h3{
+.block h3{
     background: lightgrey;
     color: black;
     padding: 1vmin;
     text-transform: capitalize;
-  }
+}
 
-  .block h4{
+.block h4{
     text-align: center;
     color: white;
-  }
+}
 
-  .rokkitt{
+.rokkitt{
     font-family: Rokkitt;
-  }
+}
 
-  .block a{
+.block a{
     color:white;
-  }
+}
 
-  h2.rokkitt {
+h2.rokkitt {
     margin: 0;
     padding: 0;
-  }
+}
 
-  .site_table td {
+.site_table td {
     width: 50%;
-  }
+}
 
-  div.profile_pic {
+div.profile_pic {
     text-align: center;
     margin: 0;
     border: 1.5vmin solid white;
     overflow: hidden;
     text-align: center;
     background: white;
-  }
+}
 
-  .profile_pic img{
+.profile_pic img{
     width: 100%;
-  }
+}
   
-  .title a {
-    text-decoration: none;
-    color: black;
-  }
+
