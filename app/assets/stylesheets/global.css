@@ -79,8 +79,9 @@ small#tagline {
   font-family: Titillium Web;
   position: relative;
   height: 6vmin;
-  top: 2vmin;
+  top: 4vmin;
   box-shadow: 0.5vmin 0.5vmin black;
+  margin: auto;
 }
 
 input.cool {
@@ -411,7 +412,7 @@ select {
     color: white;
     padding: 1vmin;
     text-transform: capitalize;
-    margin: 2vmin;
+    margin: 0 0 2vmin 0;
 }
 
 .block h3{
