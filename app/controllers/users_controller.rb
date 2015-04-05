@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :request_destroy, :destroy]
+  before_action :set_random_seed
+
+  def set_random_seed
+    session[:seed] ||= Random.new_seed
+  end
 
   def index
-    @users = User.all.page(1)
+    @users = User.randomized(session[:seed]).page(params[:page])
   end
 
   def page

@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
+
+  def self.randomized(seed = nil)
+    seed = seed.to_i rescue 0
+    order("RANDOM(#{seed})")
+  end
 end
