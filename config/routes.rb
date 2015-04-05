@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     post '/' => 'users#create'
     get 'new' => 'users#new', as: 'new_user'
     get 'forgotpassword' => :forgot_password_form, as: 'forgot_password'
-    post 'forgotpassword' => 'users#assign_new_password'
   end
 
   get '/:username' => "users#show", as: 'user'

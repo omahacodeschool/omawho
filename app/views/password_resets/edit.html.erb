@@ -1,3 +1,44 @@
+<%= render 'partials/navbar' %>
+
+<div class="container block">
+  <div class="row">
+  
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <h2 class="text-center">Hello, <%= @user.full_name %>. Please enter in a new password.</h2>
+    
+   <%= form_for @user, :url => password_reset_path(@token), :html => {method: :put, class: "form-horizontal", role: "form"} do |f| %>
+     <div class="form-group">
+       <%= f.label :password, class: "col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-0 control-label" %>
+       <div class="col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-6">
+         <%= f.password_field :password, class: "form-control" %>
+       </div>
+     </div>
+     <div class="form-group">
+       <%= f.label :password_confirmation, class: "col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-0 control-label" %>
+       <div class="col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-6">
+         <%= f.password_field :password_confirmation, class: "form-control" %>
+       </div>
+     </div>
+     <div class="col-xs-12 text-center">
+       <%= f.submit, class: "cool" %>
+     </div>
+   <% end %>
+  </div>
+</div>
+
+
+
 <h1>Choose a new password</h1>
 <%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
   <% if @user.errors.any? %>
