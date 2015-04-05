@@ -73,15 +73,14 @@ small#tagline {
     text-transform: uppercase;
 }
 
-button.cool {
-    background: white;
-    border: 0;
-    font-family: Titillium Web;
-    width: 75%;
-    position: relative;
-    height: 7vmin;
-    top: 4vmin;
-    box-shadow: 0.5vmin 0.5vmin black;
+#links input.cool {
+  background: white;
+  border: 0;
+  font-family: Titillium Web;
+  position: relative;
+  height: 6vmin;
+  top: 2vmin;
+  box-shadow: 0.5vmin 0.5vmin black;
 }
 
 input.cool {
@@ -410,9 +409,9 @@ select {
 .block h1{
     background: rgb(158, 158, 158);
     color: white;
-    padding: 2vmin;
+    padding: 1vmin;
     text-transform: capitalize;
-    margin: 0;
+    margin: 2vmin;
 }
 
 .block h3{
@@ -455,6 +454,10 @@ div.profile_pic {
 
 .profile_pic img{
     width: 100%;
+}
+
+.sort_by .col-sm-2.highlighted{
+  background: gray;
 }
   
 

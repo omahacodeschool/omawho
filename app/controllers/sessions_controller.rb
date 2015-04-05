@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @logging_in = true
     @user = User.new
     # render text: "This is the login page"
   end

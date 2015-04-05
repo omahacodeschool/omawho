@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @categories = Category.all
     @users = User.randomized(session[:seed]).page(params[:page])
   end
 
