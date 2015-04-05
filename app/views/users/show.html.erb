@@ -1,41 +1,69 @@
 <%= render partial: '/partials/navbar' %>
 <div class="container block">
   <div class="row">
-    <div class="col-sm-6">
-      
+    <div class="col-sm-6 text-center">
       <div class="profile_pic" >
-        <%= image_tag @user.avatar.url(:thumb) %>
-<!--THIS NEEDS TO FIND THE USERS IMAGE -->
+        <% if @user.avatar.url(:thumb) != nil %>
+          <%= image_tag @user.avatar.url(:thumb) %>
+        <% else %>
+          <%= image_tag 'profile_pic.jpg' %>
+        <% end %>
       </div>
-      
+      <form action="../<%= @user.username %>/edit">
+          <input type="submit" value="Edit your Profile" class="cool">
+      </form>
+      <form action="../logout">
+          <input type="submit" value="Logout" class="cool">
+      </form>
     </div>
     <div class="col-sm-6">
       <h1 class="<%= Category.find(@user.category_id).short_category_name %> rokkitt"><%= @user.full_name %></h1>
       <h2 class="rokkitt"><%= Category.find(@user.category_id).name.titleize %></h2>
-      <p class="tagline">"<%= @user.tagline %>"</p>
+      <% if @user.tagline  %>
+        <p class="tagline">"<%= @user.tagline %>"</p>
+      <% end %>
       <hr>
-      <h2 class="rokkitt">Bio:</h2>
-        <p><%= @user.bio %>      </p>
-      
-      <h2 class="rokkitt">Other Skills:</h2>
-      <ul>
-        <li>Web & Software</li>
-        <li>Fashion</li>
-      </ul>
-<!--NOT SURE HOW TO CALL THE LI SKILLS YET -->
+      <% if @user.bio %>
+        <h2 class="rokkitt">Bio:</h2>
+          <p><%= @user.bio %></p>
+      <% end %>
       <table class="site_table">
-        <tr><td><strong>Personal Site:</strong></td> <td><a href='<%= @user.website %>'><%= @user.website %></a></td></tr>
-        <tr><td><strong>Company Site:</strong></td> <td><a href='<%= @user.company_site %>'><%= @user.company %></a></td></tr>
+        <% if @user.website %>
+          <tr><td><strong>Personal Site:</strong></td> <td><a href='<%= @user.website %>'><%= @user.website %></a></td></tr>
+        <% end %>
+        <% if @user.company %>
+          <tr><td><strong>Company Site:</strong></td> <td><a href='<%= @user.company_site %>'><%= @user.company %></a></td></tr>
+        <% end %>
       </table>
-      
-      <hr>
-      <select>
-<!-- NEED A HASH TO MAKE THIS WORK -->
-        <option selected disabled>Connect With Me On Social Media</option>
-        <option>Facebook</option>
-        <option>Twitter</option>
-        <option>Dribbble</option>
-      </select>
+      <% if @user.company || @user.website %>
+        <hr>
+      <% end %>
+      <ul>
+        <% if @user.facebook != "" || @user.facebook == nil %>
+          <li><a href="http://facebook.com/<%= @user.facebook %>">Facebook</a></li>
+        <% end %> 
+        <% if @user.twitter != "" || @user.twitter == nil %>
+          <li><a href="http://twitter.com/<%= @user.twitter %>">Twitter</a></li>
+        <% end %>
+        <% if @user.instagram != "" || @user.instagram == nil %>
+          <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
+        <% end %>
+        <% if @user.linkedin != "" || @user.linkedin == nil %>
+          <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
+        <% end %>
+        <% if @user.github != "" || @user.github == nil %>  
+          <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
+        <% end %>
+        <% if @user.tumblr != "" || @user.tumblr == nil %>
+          <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
+        <% end %> 
+        <% if @user.dribbble != "" || @user.dribbble == nil %> 
+          <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
+        <% end %> 
+        <% if @user.pinterest != "" || @user.pinterest == nil %>
+          <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
+        <% end %> 
+      </ul>
     </div>
   </div>
 </div>

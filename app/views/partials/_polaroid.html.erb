@@ -5,9 +5,12 @@
     <% else  %>
       <%= image_tag 'profile_pic.jpg' %>
     <% end  %>
+    
     <p>
-      <span class="user_name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></span>
-      <span class="category_name"><medium><%= Category.find(@user.category_id).name.capitalize %></medium></span>
+      <a href="/<%= @user.username %>">
+        <span class="user_name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></span>
+        <span class="category_name"><medium><%= Category.find(@user.category_id).name.capitalize %></medium></span>
+      </a>
     </p>
   </div>
 </div>

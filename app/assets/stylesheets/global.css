@@ -461,4 +461,6 @@ div.profile_pic {
   background: gray;
 }
   
-
+a {
+  color: inherit;
+}
