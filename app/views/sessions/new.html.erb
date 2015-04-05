@@ -2,6 +2,13 @@
 
 <div class="container block">
   <h1>Login</h1>
+
+  <% if flash[:notice] %>
+    <div class="form-errors" style="margin-top: 25px;">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% end %>
+
   <div class="row">
    <%= form_tag user_session_path, :method => :post do %>
      <div class="form-group row">
