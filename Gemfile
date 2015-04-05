@@ -7,8 +7,8 @@ gem 'rails_admin'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'dotenv-rails', :groups => [:development, :test]
-gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: [:production]
+gem 'sqlite3', group: [:test]
+gem 'pg', group: [:development, :production]
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
