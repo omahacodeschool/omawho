@@ -8,9 +8,9 @@
       <div class="col-md-3">
         <div class="text-center">
           <div class="profile_pic">
-            <%= image_tag @user.avatar.url(:thumb) %>
+            <%= image_tag @user.avatar.url(:thumb), class: "avatar", alt: "avatar" %>
           </div>
-          <h6>Change profile photo</h6>
+          <h4>Change profile photo</h4>
           <%= f.file_field :avatar, class: 'form-control' %>
         </div>
       </div>

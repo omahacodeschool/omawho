@@ -12,11 +12,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.find_by_name(params[:category_name])
+    @highlighted = Category.find(params[:id]).short_category_name
     if params[:page]
-      @users = category.users.page(params[:page])
+      @users = User.where(category_id: params[:id]).page(params[:page])
+      render "users/index"
     else
-      @users = category.users.page(1)
+      @users = User.where(category_id: params[:id]).page(1)
+      render "users/index"
     end
   end
 
