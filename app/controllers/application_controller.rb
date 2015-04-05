@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 private
 
   def not_authenticated
-    redirect_to main_app.login_path, notice: "Please login first"
+    redirect_to main_app.login_path, notice: "Please log in first"
   end
 end

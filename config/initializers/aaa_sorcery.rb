@@ -460,3 +460,21 @@ Rails.application.config.sorcery.configure do |config|
   # Define which model authenticates with sorcery.
   config.user_class = "User"
 end
+
+module Sorcery
+  module Controller
+    module InstanceMethods
+      # To be used as before_filter.
+      # Will trigger auto-login attempts via the call to logged_in?
+      # If all attempts to auto-login fail, the failure callback will be called.
+      def require_admin
+        if !logged_in? || !current_user.admin?
+          session[:return_to_url] = request.url if Config.save_return_to_url && request.get?
+          self.send(Config.not_authenticated_action)
+        end
+      end
+    end
+  end
+end
+
+ActionController::Base.send(:include, Sorcery::Controller)
