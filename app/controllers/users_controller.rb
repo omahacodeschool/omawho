@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :set_random_seed
 
   def set_random_seed
-    session[:seed] ||= Random.new_seed
+    session[:seed] ||= rand
   end
 
   def index
     @categories = Category.all
-    @users = User.randomized(session[:seed]).page(params[:page])
+    @users = User.select("users.*, setseed(#{session[:seed]})").order("RANDOM()").page(params[:page])
   end
 
   def page
