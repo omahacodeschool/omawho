@@ -1,6 +1,12 @@
 <%= render 'partials/navbar' %>
 
 <div class="container block">
+  <% if flash[:notice] %>
+    <div class="form-errors">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% end %>
+
   <h1>Login</h1>
   <div class="row">
    <%= form_tag user_session_path, :method => :post do %>
