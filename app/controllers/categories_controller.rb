@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @categories = Category.all
     @highlighted = Category.find(params[:id]).short_category_name
     if params[:page]
       @users = User.where(category_id: params[:id]).page(params[:page])

@@ -456,5 +456,9 @@ div.profile_pic {
 .profile_pic img{
     width: 100%;
 }
+
+.sort_by .col-sm-2.highlighted{
+  background: gray;
+}
   
 

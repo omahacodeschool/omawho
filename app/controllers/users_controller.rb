@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :request_destroy, :destroy]
 
   def index
+    @categories = Category.all
     @users = User.all.page(1)
   end
 
