@@ -1,6 +1,10 @@
 <div class="col-md-3 col-sm-4">
   <div class="polaroid <%= Category.find(@user.category_id).short_category_name %>" id="<%= @user.id %>" >
-    <%= image_tag ('pic01.jpg')%>
+    <% if @user.avatar.url(:thumb) != nil %>
+      <%= image_tag @user.avatar.url(:thumb)%>
+    <% else  %>
+      <%= image_tag 'profile_pic.jpg' %>
+    <% end  %>
     <p>
       <span class="user_name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></span>
       <span class="category_name"><medium><%= Category.find(@user.category_id).name.capitalize %></medium></span>
