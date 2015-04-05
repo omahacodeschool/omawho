@@ -17,7 +17,7 @@ class Category < ActiveRecord::Base
       User.create(first_name: "Ringo", last_name: "Starr", username: "RingoSta", email: "skjdlkjslk@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdbsgiudgisu")
       User.create(first_name: "Starbuck", last_name: "Vandelay", username: "StarbuckV", email: "ndhuwho@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdguygusg")
       User.create(first_name: "Apollo", last_name: "Trent", username: "ApolloT", email: "jdwjoil@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdbiushiu")
-      User.create(first_name: "Prince", last_name: "King", username: "PrintK", mail: "ieuoisodi@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdg7s86")
+      User.create(first_name: "Prince", last_name: "King", username: "PrintK", email: "ieuoisodi@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdg7s86")
       User.create(first_name: "Barry", last_name: "Elvis", username: "BarryK", email: "nskjndsioi@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdhg8s7ygu")
       User.create(first_name: "Fred", last_name: "Kong", username: "Fritz", email: "jiwjncuwwk@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdb78ty87")
       User.create(first_name: "Lulu", last_name: "Crool", username: "Lulululu", email: "kjelknn8@gmail.com", password: 'password', password_confirmation: 'password', salt: "sdhg863hhdg")
