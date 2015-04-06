@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :request_destroy, :destroy]
+  before_action :set_random_seed
+
+  def set_random_seed
+    session[:seed] ||= rand
+  end
 
   def index
     @categories = Category.all
-    @users = User.all.page(1)
+    @users = User.select("users.*, setseed(#{session[:seed]})").order("RANDOM()").page(params[:page])
   end
 
   def page
@@ -91,13 +96,4 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to root_path, notice: "Your account has been deleted."
   end
-
-  def crypted_password
-    BCrypt::Password.new(read_attribute(:crypted_password))
-  end
-
-  def crypted_password=(password)
-    write_attribute(:crypted_password, BCrypt::Password.create(password))
-  end
-
 end
