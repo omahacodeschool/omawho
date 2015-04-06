@@ -96,13 +96,4 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to root_path, notice: "Your account has been deleted."
   end
-
-  def crypted_password
-    BCrypt::Password.new(read_attribute(:crypted_password))
-  end
-
-  def crypted_password=(password)
-    write_attribute(:crypted_password, BCrypt::Password.create(password))
-  end
-
 end
