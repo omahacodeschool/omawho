@@ -19,48 +19,48 @@
     <div class="col-sm-6">
       <h1 class="<%= Category.find(@user.category_id).short_category_name %> rokkitt"><%= @user.full_name %></h1>
       <h2 class="rokkitt"><%= Category.find(@user.category_id).name.titleize %></h2>
-      <% if @user.tagline  %>
+      <% if @user.tagline && @user.tagline != ""  %>
         <p class="tagline">"<%= @user.tagline %>"</p>
       <% end %>
       <hr>
-      <% if @user.bio %>
+      <% if @user.bio && @user.bio != "" %>
         <h2 class="rokkitt">Bio:</h2>
           <p><%= @user.bio %></p>
       <% end %>
       <table class="site_table">
-        <% if @user.website %>
+        <% if @user.website && @user.website != ""%>
           <tr><td><strong>Personal Site:</strong></td> <td><a href='<%= @user.website %>'><%= @user.website %></a></td></tr>
         <% end %>
-        <% if @user.company %>
+        <% if @user.company && @user.company != "" %>
           <tr><td><strong>Company Site:</strong></td> <td><a href='<%= @user.company_site %>'><%= @user.company %></a></td></tr>
         <% end %>
       </table>
-      <% if @user.company || @user.website %>
+      <% if (@user.company && @user.website != "") || (@user.website && @user.website != "") %>
         <hr>
       <% end %>
       <ul>
-        <% if @user.facebook != "" || @user.facebook == nil %>
+        <% if @user.facebook != "" && @user.facebook != nil %>
           <li><a href="http://facebook.com/<%= @user.facebook %>">Facebook</a></li>
         <% end %> 
-        <% if @user.twitter != "" || @user.twitter == nil %>
+        <% if @user.twitter != "" && @user.twitter != nil %>
           <li><a href="http://twitter.com/<%= @user.twitter %>">Twitter</a></li>
         <% end %>
-        <% if @user.instagram != "" || @user.instagram == nil %>
+        <% if @user.instagram != "" && @user.instagram != nil %>
           <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
         <% end %>
-        <% if @user.linkedin != "" || @user.linkedin == nil %>
+        <% if @user.linkedin != "" && @user.linkedin != nil %>
           <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
         <% end %>
-        <% if @user.github != "" || @user.github == nil %>  
+        <% if @user.github != "" && @user.github != nil %>  
           <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
         <% end %>
-        <% if @user.tumblr != "" || @user.tumblr == nil %>
+        <% if @user.tumblr != "" && @user.tumblr != nil %>
           <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
         <% end %> 
-        <% if @user.dribbble != "" || @user.dribbble == nil %> 
+        <% if @user.dribbble != "" && @user.dribbble != nil %> 
           <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
         <% end %> 
-        <% if @user.pinterest != "" || @user.pinterest == nil %>
+        <% if @user.pinterest != "" && @user.pinterest != nil %>
           <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
         <% end %> 
       </ul>
