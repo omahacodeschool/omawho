@@ -9,12 +9,14 @@
           <%= image_tag 'profile_pic.jpg' %>
         <% end %>
       </div>
-      <form action="../<%= @user.username %>/edit">
-          <input type="submit" value="Edit your Profile" class="cool">
-      </form>
-      <form action="../logout">
-          <input type="submit" value="Logout" class="cool">
-      </form>
+      <% if current_user.username == @user.username %>
+        <form action="../<%= @user.username %>/edit">
+            <input type="submit" value="Edit your Profile" class="cool">
+        </form>
+        <form action="../logout">
+            <input type="submit" value="Logout" class="delete">
+        </form>
+      <% end %>
     </div>
     <div class="col-sm-6">
       <h1 class="<%= Category.find(@user.category_id).short_category_name %> rokkitt"><%= @user.full_name %></h1>
