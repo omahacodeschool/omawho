@@ -9,7 +9,7 @@
           <%= image_tag 'profile_pic.jpg' %>
         <% end %>
       </div>
-      <% if current_user.username == @user.username %>
+      <% if current_user && (current_user.username == @user.username) %>
         <form action="../<%= @user.username %>/edit">
             <input type="submit" value="Edit your Profile" class="cool">
         </form>
@@ -43,7 +43,7 @@
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
           <li><a href="http://facebook.com/<%= @user.facebook %>">Facebook</a></li>
-        <% end %> 
+        <% end %>
         <% if @user.twitter != "" && @user.twitter != nil %>
           <li><a href="http://twitter.com/<%= @user.twitter %>">Twitter</a></li>
         <% end %>
@@ -53,18 +53,18 @@
         <% if @user.linkedin != "" && @user.linkedin != nil %>
           <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
         <% end %>
-        <% if @user.github != "" && @user.github != nil %>  
+        <% if @user.github != "" && @user.github != nil %>
           <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
         <% end %>
         <% if @user.tumblr != "" && @user.tumblr != nil %>
           <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
-        <% end %> 
-        <% if @user.dribbble != "" && @user.dribbble != nil %> 
+        <% end %>
+        <% if @user.dribbble != "" && @user.dribbble != nil %>
           <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
-        <% end %> 
+        <% end %>
         <% if @user.pinterest != "" && @user.pinterest != nil %>
           <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
-        <% end %> 
+        <% end %>
       </ul>
     </div>
   </div>
