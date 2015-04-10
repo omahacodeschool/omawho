@@ -25,14 +25,9 @@
 </div>
 
 <div class="container">
-  
-  <div class="row">
-      
-    <% @users.each do |user| %>
-      <% @user= user %>
+
+  <div id="polaroids-row" class="row">
       <%= render partial: 'partials/polaroid' %>
-    <% end %>
-    
   </div>
 
 </div>
