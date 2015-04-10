@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
     @categories = Category.all
     @users = User.joins(:category).select("users.username, users.first_name, users.last_name,
-    users.avatar, categories.name AS category, setseed(#{session[:seed]})").
+    users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
     order("RANDOM()").page(params[:page])
   end
 
