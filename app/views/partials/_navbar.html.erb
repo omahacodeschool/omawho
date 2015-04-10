@@ -6,14 +6,18 @@
       <small id="tagline">The faces of Omaha's creative community</small>
     </div>
     <div class="col-xs-12 col-sm-4 col-sm-pull-8 text-center vcenter" id="links">
-      <% if current_user %>
-        <form action="/<%= current_user.username %>">
-            <input type="submit" value="Logout // Edit your Profile" class="cool">
+      <% if current_user && (current_user.username == @user.username) %>
+        <form action="/logout">
+            <input type="submit" value="Logout" class="cool">
         </form>
       <% elsif @logging_in %>
       <form>
           <input type="submit" value="Logging in..." class="cool">
       </form>
+      <% elsif current_user %>
+        <form action="/<%= current_user.username %>">
+            <input type="submit" value="Logout // Edit your Profile" class="cool">
+        </form>
       <% else %>
       <form action="/login">
           <input type="submit" value="Login // Add your Face" class="cool">
