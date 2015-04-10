@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
+
+  def short_category_name
+    category.parameterize
+  end
 end
