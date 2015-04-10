@@ -1,4 +1,6 @@
 
+//= depend_on_asset "map.jpg"
+
 .form-errors {
     color: white;
     text-align: center;
@@ -135,7 +137,7 @@ input.delete {
 
 body {
     background: #D3D3D3;
-    background-image: url('/assets/map-663aee735cc13a2a9ae0910f0c6e6ffb.jpg');
+    background-image: url('<%= asset_path("map.jpg") %>');
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
