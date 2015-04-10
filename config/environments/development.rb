@@ -1,10 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = {
   :address              => "smtp.gmail.com",
-  :port                 => 465,
-  :domain               => "gmail.lv",
+  :port                 => 587,
+  :domain               => "omawho.com",
   :user_name            => "uanwar88@gmail.com",
   :password             => ENV['email_password'],
   :authentication       => "plain",
