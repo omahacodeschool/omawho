@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'password_resets/update'
 
   get '/category/:id' => 'categories#show', as: 'category'
-  get '/category/:id/page/:page' => 'categories#show'
+  get '/category/:id/page/:page' => 'categories#page', as: 'category_page'
 
   get '/login' => 'sessions#new', as: 'login'
   post '/login' => 'sessions#create', as: 'user_session'
