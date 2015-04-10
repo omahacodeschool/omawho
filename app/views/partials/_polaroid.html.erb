@@ -1,3 +1,6 @@
+<div class="polaroids_page">
+<% @users.each do |user| %>
+  <% @user= user %>
 <div class="col-md-3 col-sm-4">
   <div class="polaroid <%= @user.category_name.parameterize %>" id="<%= @user.id %>" >
     <% if @user.avatar.url(:thumb) != nil %>
@@ -13,4 +16,6 @@
       </a>
     </p>
   </div>
+</div>
+<% end %>
 </div>
