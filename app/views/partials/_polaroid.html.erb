@@ -1,15 +1,15 @@
 <div class="col-md-3 col-sm-4">
-  <div class="polaroid <%= Category.find(@user.category_id).short_category_name %>" id="<%= @user.id %>" >
+  <div class="polaroid <%= @user.category_name.parameterize %>" id="<%= @user.id %>" >
     <% if @user.avatar.url(:thumb) != nil %>
       <%= image_tag @user.avatar.url(:thumb)%>
     <% else  %>
       <%= image_tag 'profile_pic.jpg' %>
     <% end  %>
-    
+
     <p>
       <a href="/<%= @user.username %>">
-        <span class="user_name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></span>
-        <span class="category_name"><medium><%= Category.find(@user.category_id).name.capitalize %></medium></span>
+        <span class="user_name"><%= @user.full_name.titleize %></span>
+        <span class="category_name"><medium><%= @user.category_name.titleize %></medium></span>
       </a>
     </p>
   </div>
