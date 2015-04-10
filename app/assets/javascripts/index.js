@@ -31,15 +31,15 @@ window.onload = function(){
     }
   }
 
-  function toggleThisInfo(){
+  function toggleThisInfo(event){
     if (infoBoxesOn === false){
-      if ($(this).siblings().css('display') == 'none'){
-        $(this).siblings().css('display','block');
+      event.preventDefault();
+      if ($(this).parent().siblings().css('display') == 'none'){
+        $(this).parent().siblings().css('display','block');
       } else {
-        $(this).siblings().css('display','none');
+        $(this).parent().siblings().css('display','none');
       }
     }
-  }
 
   function append_child() {
     row = document.getElementById("polaroids-row");
@@ -57,9 +57,8 @@ window.onload = function(){
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         page_num++;
         loadPage(page_num);
-        js_req.addEventListener("load", append_child)
+        js_req.addEventListener("load", append_child);
     }
-};
-
-
+  };
+}
 };
