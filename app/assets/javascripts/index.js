@@ -1,13 +1,6 @@
-
-
-window.onload = function() {
+$(document).ready(function() {
   var infoBoxesOn = 1;
   var page_num = 1;
-
-  var category_buttons = document.getElementsByClassName('category_button');
-  category_buttons.addEventListener("click", function() {
-    alert("Clicked button");
-  });
 
   $("#quiz").click(toggleGlobalInfo);
   $infoBoxes = $(".polaroid p");
@@ -61,7 +54,6 @@ window.onload = function() {
       index = window_location.lastIndexOf("y/") + 2;
       end_index = window_location.length;
       page_url = "/category/" + window_location.substr(index,end_index) + "/page/" + page_num;
-      alert("Page number: " + page_num);
     }
     else {
       page_url = "/page/" + page_num;
@@ -78,4 +70,4 @@ window.onload = function() {
       js_req.addEventListener("load", append_child);
     }
   };
-};
+});
