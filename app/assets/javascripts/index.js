@@ -31,12 +31,13 @@ function toggleGlobalInfo() {
   };
 };
 
-function toggleThisInfo(){
+function toggleThisInfo(event){
   if (infoBoxesOn == false){
-    if ($(this).siblings().css('display') == 'none'){
-      $(this).siblings().css('display','block');
+    event.preventDefault();
+    if ($(this).parent().siblings().css('display') == 'none'){
+      $(this).parent().siblings().css('display','block');
     } else {
-      $(this).siblings().css('display','none')
+      $(this).parent().siblings().css('display','none')
     };
   }
 };
