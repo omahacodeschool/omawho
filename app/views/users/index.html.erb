@@ -19,21 +19,8 @@
 
 <div class="container sort_by_mobile_mode">
   <div class="row">
-    <select>
-      <option>Faces By Category</option>
-      <option><div><small class="sorter">All</small></div></option>
-      <option><div><small class="sorter">Web & Software</small></div></option>
-      <option><div><small class="sorter">Graphic Design</small></div></option>
-      <option><div><small class="sorter">Archit. & Int. Design</small></div></option>
-      <option><div><small class="sorter">Photography</small></div></option>
-      <option><div><small class="sorter">Music/Film/Art</small></div></option>
-      <option><div><small class="sorter">Fashion</small></div></option>
-      <option><div><small class="sorter">Writing</small></div></option>
-      <option><div><small class="sorter">Venture Capital</small></div></option>
-      <option><div><small class="sorter">Community Connector</small></div></option>
-      <option><div><small class="sorter">Non-Profit</small></div></option>
-      <option><div><small class="sorter">Sales & Marketing</small></div></option>
-    </select>
+    <%= select_tag("category", options_from_collection_for_select(@categories, "id", "name", params[:id]), :id => 'mobile_select', :include_blank => 'View Faces By Category', :onchange => 'window.location.href = "/category/" + this.value') %>
+<!--, :onchange => 'window.location.href = "category/" + this.getAttribute("value")' -->
   </div>
 </div>
 
