@@ -5,6 +5,6 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV["aws_secret"],
     region:                'us-east-1'
   }
-  config.fog_directory  = 'omawho-v2-staging'
+  config.fog_directory  = ENV['aws_bucket']
 end
 
