@@ -3,8 +3,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
-  :port                 => 465,
-  :domain               => "gmail.lv",
+  :port                 => 587,
+  :domain               => "omawho.com",
   :user_name            => "uanwar88@gmail.com",
   :password             => ENV['email_password'],
   :authentication       => "plain",

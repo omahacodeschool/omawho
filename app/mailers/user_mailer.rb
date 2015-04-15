@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-
+  default from: 'uanwar88@gmail.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -7,7 +7,6 @@ class UserMailer < ApplicationMailer
   #
 
   def welcome_mail(user)
-    default from: 'elpresidente@omawho.com'
     @user = user
     @url = "http://www.omawho.com/login"
     mail(to: @user.email, subject: 'Welcome to Omawho')

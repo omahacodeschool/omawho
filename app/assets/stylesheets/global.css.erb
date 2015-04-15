@@ -1,4 +1,3 @@
-//= depend_on_asset "map.jpg"
 
 .form-errors {
     color: white;
@@ -66,6 +65,11 @@ div#links {
     vertical-align: middle;
 }
 
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 small#tagline {
     font-family: Titillium Web;
     width: 100%;
@@ -131,8 +135,12 @@ input.delete {
 
 body {
     background: #D3D3D3;
+<<<<<<< HEAD
     background-image: url('<%= asset_path("map.jpg") %>');
     background-image: url('<%= asset_path("map.jpg") %>');
+=======
+    background-image: url('/assets/map-663aee735cc13a2a9ae0910f0c6e6ffb.jpg');
+>>>>>>> 8c24348c2b930171b1c876d08f09c980903e7287
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
@@ -297,9 +305,10 @@ span.user_name {
 .polaroid p.quiz_mode{
     position: absolute;
     width: 70%;
-    margin-top: -25%;
-    left: 15%;
-    background: rgba(255,255,255,0.8);
+    /* margin-top: -25%; */
+    /* left: 15%; */
+    bottom: 2vw;
+    background: rgb(255,255,255);
     border: none;
     display: block;
 }
@@ -366,6 +375,19 @@ select {
 }
 
 @media screen and (max-width: 768px) {
+    .polaroid p.quiz_mode {
+        bottom: 5vw;
+        left: 15%;
+    }
+
+    .polaroid span {
+        font-size: large;
+    }
+
+    span.user_name{
+        font-size: x-large;
+    }
+
     div.polaroid {
        margin: 6vmin;
     }
