@@ -1,4 +1,6 @@
 
+//= depend_on_asset "map.jpg"
+
 .form-errors {
     color: white;
     text-align: center;
@@ -135,12 +137,7 @@ input.delete {
 
 body {
     background: #D3D3D3;
-<<<<<<< HEAD
     background-image: url('<%= asset_path("map.jpg") %>');
-    background-image: url('<%= asset_path("map.jpg") %>');
-=======
-    background-image: url('/assets/map-663aee735cc13a2a9ae0910f0c6e6ffb.jpg');
->>>>>>> 8c24348c2b930171b1c876d08f09c980903e7287
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web' !important;
@@ -212,6 +209,10 @@ h1.sales-marketing{
     border-bottom: 3px solid white;
 }
 
+.sort_by .all.highlighted{
+    border-bottom: 3px solid white;
+}
+
 .sort_by .web-software:hover{
     border-bottom: 3px solid blue;
 }
@@ -256,14 +257,58 @@ h1.sales-marketing{
     border-bottom: 3px solid orange;
 }
 
+.sort_by .web-software.highlighted{
+    border-bottom: 3px solid blue;
+}
+
+.sort_by .graphic-design.highlighted{
+    border-bottom: 3px solid green;
+}
+
+.sort_by .architecture-interior-design.highlighted{
+    border-bottom: 3px solid goldenrod;
+}
+
+.sort_by .photography.highlighted{
+    border-bottom: 3px solid red;
+}
+
+.sort_by .music-film-art.highlighted{
+    border-bottom: 3px solid yellow;
+}
+
+.sort_by .fashion.highlighted{
+    border-bottom: 3px solid violet;
+}
+
+.sort_by .writing.highlighted{
+    border-bottom: 3px solid saddlebrown;
+}
+
+.sort_by .venture-capital.highlighted{
+    border-bottom: 3px solid purple;
+}
+
+.sort_by .community-connector.highlighted{
+    border-bottom: 3px solid lime;
+}
+
+.sort_by .non-profit.highlighted{
+    border-bottom: 3px solid salmon;
+}
+
+.sort_by .sales-marketing.highlighted{
+    border-bottom: 3px solid orange;
+}
+
 .container.sort_by {
     margin-top: 1vw;
 }
 
 div.polaroid {
     text-align: center;
-    margin: 2vmin;
-    border: 1.5vmin solid white;
+    margin: 1vw;
+    border: 1vw solid white;
     overflow: hidden;
     text-align: center;
     background: white;
@@ -304,10 +349,10 @@ span.user_name {
 
 .polaroid p.quiz_mode{
     position: absolute;
-    width: 70%;
+    width: 68%;
     /* margin-top: -25%; */
-    /* left: 15%; */
-    bottom: 2vw;
+    left: 16%;
+    bottom: 12%;
     background: rgb(255,255,255);
     border: none;
     display: block;
@@ -488,4 +533,12 @@ div.profile_pic {
 
 a {
   color: inherit;
+}
+
+.save.col-md-3.col-md-push-7.control-label {
+  text-align: center;
+}
+
+input[type="submit"] {
+  padding: 0.6vw;
 }
