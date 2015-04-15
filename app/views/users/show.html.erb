@@ -39,10 +39,10 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <li><a href="http://facebook.com/<%= @user.facebook %>">Facebook</a></li>
+          <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
         <% end %>
         <% if @user.twitter != "" && @user.twitter != nil %>
-          <li><a href="http://twitter.com/<%= @user.twitter %>">Twitter</a></li>
+          <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
         <% end %>
         <% if @user.instagram != "" && @user.instagram != nil %>
           <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
