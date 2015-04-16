@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  belongs_to :category
+  has_and_belongs_to_many :categories
 
   #self.per_page = 16
 
@@ -20,5 +20,13 @@ class User < ActiveRecord::Base
 
   def full_name
     first_name + " " + last_name
+  end
+  
+  def category_id
+    self.category.id
+  end
+  
+  def category
+    self.categories.first
   end
 end

@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :users
+  has_and_belongs_to_many :users
 
   def short_category_name
     name.parameterize
