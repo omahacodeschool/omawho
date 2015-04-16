@@ -419,7 +419,22 @@ select {
     color: white !important;
 }
 
+.mobile_only{
+  display: none;
+}
+
+@media screen and (max-width: 993px) {
+  .mobile_only{
+    display: block;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  
+    body{
+      background-image: none;
+    }
+  
     .polaroid p.quiz_mode {
         bottom: 5vw;
         left: 15%;
