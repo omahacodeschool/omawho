@@ -31,14 +31,14 @@ class UsersController < ApplicationController
   end
 
   def edit_params
-    params.require(:user).permit(:email, :username, :category_id,
+    params.require(:user).permit(:email, :username, {category_ids: []},
     :first_name, :last_name, :avatar, :bio, :website, :company, :company_site,
     :facebook, :dribbble, :twitter, :linkedin, :github, :pinterest, :instagram,
     :tagline, :tumblr, :googleplus)
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :category_id,
+    params.require(:user).permit(:email, :username, :password, {category_ids: []},
     :password_confirmation, :first_name, :last_name, :avatar)
   end
 
