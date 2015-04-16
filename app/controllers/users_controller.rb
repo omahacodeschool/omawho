@@ -8,13 +8,13 @@ class UsersController < ApplicationController
 
   def index
     @categories = Category.all
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
     order("RANDOM()").page(1)
     @user = User.new
   end
 
   def page
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
     order("RANDOM()").page(params[:page])
     render partial: 'partials/polaroid'
   end

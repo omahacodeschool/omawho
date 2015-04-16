@@ -15,13 +15,13 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @highlighted = Category.find(params[:id]).short_category_name
     @user = User.new
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
     order("RANDOM()").where(category_id: params[:id]).page(1)
     render "users/index"
   end
 
   def page
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name, setseed(#{session[:seed]})").
     order("RANDOM()").where(category_id: params[:id]).page(params[:page])
     render partial: 'partials/polaroid'
   end
