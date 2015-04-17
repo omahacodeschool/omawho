@@ -1,10 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: 'uanwar88@gmail.com'
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.reset_password_email.subject
-  #
+  address = Mail::Address.new "sumeet+omawho@bigwheelbrigade.com"
+  address.display_name = "Omawho"
+  address.format
+  
+  default from: address
 
   def welcome_mail(user)
     @user = user

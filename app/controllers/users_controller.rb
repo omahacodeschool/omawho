@@ -9,14 +9,21 @@ class UsersController < ApplicationController
 
   def index
     @categories = Category.all
+    
     User.connection.execute("select setseed(#{session[:seed]})")
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").order("RANDOM()").page(1)
+    
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").
+    order("RANDOM()").page(1)
+
     @user = User.new
   end
 
   def page
     User.connection.execute("select setseed(#{session[:seed]})")
-    @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").order("RANDOM()").page(params[:page])
+
+    @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").
+    order("RANDOM()").page(params[:page])
+
     render partial: 'partials/polaroid'
   end
 
@@ -32,14 +39,14 @@ class UsersController < ApplicationController
   end
 
   def edit_params
-    params.require(:user).permit(:email, :username, :category_id,
+    params.require(:user).permit(:email, :username, {category_ids: []},
     :first_name, :last_name, :avatar, :bio, :website, :company, :company_site,
     :facebook, :dribbble, :twitter, :linkedin, :github, :pinterest, :instagram,
     :tagline, :tumblr, :googleplus)
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :category_id,
+    params.require(:user).permit(:email, :username, :password, {category_ids: []},
     :password_confirmation, :first_name, :last_name, :avatar)
   end
 
