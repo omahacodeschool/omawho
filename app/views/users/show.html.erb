@@ -39,71 +39,28 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <% if @user.facebook.include?("http") || @user.facebook.include?("www") %>
-            <a href="<%= @user.facebook %>"><li>Facebook</li></a>
-          <% elsif @user.facebook.include?("www") && !@user.facebook.include?("http") %>
-            <a href="http://<%= @user.facebook %>"><li>Facebook</li></a>
-          <% elsif @user.facebook.include?(".com") && !@user.include?("www") && !@user.include?("http") %>
-            <a href="http://<%= @user.facebook %>"><li>Facebook</li></a>
-          <% else %>
-            <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
-          <% end %>
+          <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
         <% end %>
-
         <% if @user.twitter != "" && @user.twitter != nil %>
-          <% if @user.twitter.include?("http") || @user.twitter.include?("www") %>
-            <a href="<%= @user.twitter %>"><li>Twitter</li></a>
-          <% else %>
-            <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
-          <% end %>
+          <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
         <% end %>
-
         <% if @user.instagram != "" && @user.instagram != nil %>
-          <% if @user.instagram.include?("http") || @user.instagram.include?("www") %>
-            <a href="<%= @user.instagram %>"><li>Instagram</li></a>
-          <% else %>
-            <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
-          <% end %>
+          <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
         <% end %>
-
         <% if @user.linkedin != "" && @user.linkedin != nil %>
-          <% if @user.linkedin.include?("http") || @user.linkedin.include?("www") %>
-            <a href="<%= @user.linkedin %>"><li>LinkedIn</li></a>
-          <% else %>
-            <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
-          <% end %>
+          <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
         <% end %>
-
         <% if @user.github != "" && @user.github != nil %>
-          <% if @user.github.include?("http") || @user.github.include?("www") %>
-            <a href="<%= @user.github %>"><li>Github</li></a>
-          <% else %>
-            <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
-          <% end %>
+          <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
         <% end %>
-
         <% if @user.tumblr != "" && @user.tumblr != nil %>
-          <% if @user.tumblr.include?("http") || @user.tumblr.include?("www") %>
-            <a href="<%= @user.tumblr %>"><li>Tumblr</li></a>
-          <% else %>
-            <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
-          <% end %>
+          <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
         <% end %>
-
         <% if @user.dribbble != "" && @user.dribbble != nil %>
-          <% if @user.dribbble.include?("http") || @user.dribbble.include?("www") %>
-            <a href="<%= @user.dribbble %>"><li>Dribbble</li></a>
-          <% else %>
-            <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
-          <% end %>
+          <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
         <% end %>
-
         <% if @user.pinterest != "" && @user.pinterest != nil %>
-          <% if @user.pinterest.include?("http") || @user.pinterest.include?("www") %>
-            <a href="<%= @user.pinterest %>"><li>Pinterest</li></a>
-          <% else %>
-            <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
-          <% end %>
+          <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
         <% end %>
       </ul>
     </div>
