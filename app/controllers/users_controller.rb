@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
   def index
     @categories = Category.all
-    
+
     User.connection.execute("select setseed(#{session[:seed]})")
-    
+
     @users = User.joins(:categories).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").
     order("RANDOM()").page(1)
 
@@ -75,8 +75,12 @@ class UsersController < ApplicationController
 
 
   def edit
-    @categories = Category.all
-    @user = User.find_by_username(params[:username])
+    if current_user.username == params[:username]
+      @categories = Category.all
+      @user = User.find_by_username(params[:username])
+    else
+      redirect_to root_path
+    end
   end
 
   def show
