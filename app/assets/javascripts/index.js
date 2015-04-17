@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   $("#quiz").click(toggleGlobalInfo);
   $infoBoxes = $(".polaroid p");
+  $mainContainer = $("div#polaroid_container")
   window.setInterval(flashOrange(),5000);
   $(".polaroid img").each(function(index){
     $(this).click(toggleThisInfo);
@@ -20,13 +21,13 @@ $(document).ready(function() {
 
   function toggleGlobalInfo() {
     if (infoBoxesOn === true) {
-      $infoBoxes.css('display','none');
-      $infoBoxes.addClass('quiz_mode');
+      // $infoBoxes.css('display','none');
+      $mainContainer.addClass('quiz_mode');
       infoBoxesOn = false;
       return;
     } else {
-      $infoBoxes.css('display','block');
-      $infoBoxes.removeClass('quiz_mode');
+      // $infoBoxes.css('display','block');
+      $mainContainer.removeClass('quiz_mode');
       infoBoxesOn = true;
     }
   }
@@ -68,6 +69,9 @@ $(document).ready(function() {
       page_num++;
       loadPage(page_num);
       js_req.addEventListener("load", append_child);
+      $(".polaroid img").each(function(index){
+        $(this).click(toggleThisInfo);
+      });
     }
   };
 });
