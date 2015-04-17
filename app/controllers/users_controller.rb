@@ -85,6 +85,8 @@ class UsersController < ApplicationController
 
   def show
     if @user = User.find_by_username(params[:username])
+      @pattern = "^(https?:\/\/)?(www.)?(facebook.com\/|linkedin.com\/|twitter.com\/|instagram.com\/|github.com\/|tumblr.com\/|dribbble.com\/|pinterest.com\/)?(.*)"
+      @regex = Regexp.new(@pattern, Regexp::IGNORECASE)
       render :show
     else
       redirect_to root_path

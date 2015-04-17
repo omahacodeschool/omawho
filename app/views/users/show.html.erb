@@ -39,7 +39,8 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
+          <% matches = @user.facebook.match(@regex) %>
+          <a href="http://facebook.com/<%= matches[4] %>"><li>Facebook</li></a>
         <% end %>
         <% if @user.twitter != "" && @user.twitter != nil %>
           <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
@@ -57,10 +58,10 @@
           <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
         <% end %>
         <% if @user.dribbble != "" && @user.dribbble != nil %>
-          <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
+          <a href="http://dribbble.com/<%= @user.dribbble %>"><li>Dribbble</li></a>
         <% end %>
         <% if @user.pinterest != "" && @user.pinterest != nil %>
-          <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
+          <a href="http://pinterest.com/<%= @user.pinterest %>"><li>Pinterest</li></a>
         <% end %>
       </ul>
     </div>
