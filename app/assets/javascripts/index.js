@@ -46,6 +46,9 @@ $(document).ready(function() {
   function append_child() {
     row = document.getElementById("polaroids-row");
     row.innerHTML = row.innerHTML + js_req.response;
+    $(".polaroid img").each(function(index){
+      $(this).click(toggleThisInfo);
+    });
   }
 
   function loadPage(page_num) {
@@ -69,9 +72,6 @@ $(document).ready(function() {
       page_num++;
       loadPage(page_num);
       js_req.addEventListener("load", append_child);
-      $(".polaroid img").each(function(index){
-        $(this).click(toggleThisInfo);
-      });
     }
   };
 });
