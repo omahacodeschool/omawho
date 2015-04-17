@@ -30,11 +30,6 @@ class User < ActiveRecord::Base
     self.categories.first
   end
 
-  def regex_pattern
-    pattern = "^(https?:\/\/)?(www.)?(facebook.com\/|linkedin.com\/|twitter.com\/|instagram.com\/|github.com\/|dribbble.com\/|pinterest.com\/)?(.*)"
-    Regexp.new(pattern, Regexp::IGNORECASE)
-  end
-
   def linkedin_username
     matches = self.linkedin.match(regex_pattern)
     matches[4]
@@ -73,6 +68,14 @@ class User < ActiveRecord::Base
   def pinterest_username
     matches = self.pinterest.match(regex_pattern)
     matches[4]
+  end
+
+  private
+
+  def regex_pattern
+    # This method returns a new Regexp object using the given pattern.
+    pattern = "^(https?:\/\/)?(www.)?(facebook.com\/|linkedin.com\/|twitter.com\/|instagram.com\/|github.com\/|dribbble.com\/|pinterest.com\/)?(.*)"
+    Regexp.new(pattern, Regexp::IGNORECASE)
   end
 
 end
