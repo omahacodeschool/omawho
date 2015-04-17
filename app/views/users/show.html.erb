@@ -39,29 +39,28 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <% matches = @user.facebook.match(@regex) %>
-          <a href="http://facebook.com/<%= matches[4] %>"><li>Facebook</li></a>
+          <a href="http://facebook.com/<%= @user.facebook_username %>"><li>Facebook</li></a>
         <% end %>
         <% if @user.twitter != "" && @user.twitter != nil %>
-          <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
+          <a href="http://twitter.com/<%= @user.twitter_username %>"><li>Twitter</li></a>
         <% end %>
         <% if @user.instagram != "" && @user.instagram != nil %>
-          <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
+          <a href="http://instagram.com/<%= @user.instagram_username %>"><li>Instagram</li></a>
         <% end %>
         <% if @user.linkedin != "" && @user.linkedin != nil %>
-          <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
+          <a href="http://linkedin.com/<%= @user.linkedin_username %>"><li>LinkedIn</li></a>
         <% end %>
         <% if @user.github != "" && @user.github != nil %>
-          <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
+          <a href="http://github.com/<%= @user.github_username %>"><li>Github</li></a>
         <% end %>
         <% if @user.tumblr != "" && @user.tumblr != nil %>
           <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
         <% end %>
         <% if @user.dribbble != "" && @user.dribbble != nil %>
-          <a href="http://dribbble.com/<%= @user.dribbble %>"><li>Dribbble</li></a>
+          <a href="http://dribbble.com/<%= @user.dribbble_username %>"><li>Dribbble</li></a>
         <% end %>
         <% if @user.pinterest != "" && @user.pinterest != nil %>
-          <a href="http://pinterest.com/<%= @user.pinterest %>"><li>Pinterest</li></a>
+          <a href="http://pinterest.com/<%= @user.pinterest_username %>"><li>Pinterest</li></a>
         <% end %>
       </ul>
     </div>

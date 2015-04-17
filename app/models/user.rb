@@ -21,12 +21,58 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
-  
+
   def category_id
     self.category.id
   end
-  
+
   def category
     self.categories.first
   end
+
+  def regex_pattern
+    pattern = "^(https?:\/\/)?(www.)?(facebook.com\/|linkedin.com\/|twitter.com\/|instagram.com\/|github.com\/|dribbble.com\/|pinterest.com\/)?(.*)"
+    Regexp.new(pattern, Regexp::IGNORECASE)
+  end
+
+  def linkedin_username
+    matches = self.linkedin.match(regex_pattern)
+    matches[4]
+  end
+
+  def facebook_username
+    matches = self.facebook.match(regex_pattern)
+    matches[4]
+  end
+
+  def twitter_username
+    matches = self.twitter.match(regex_pattern)
+    matches[4]
+  end
+
+  def instagram_username
+    matches = self.instagram.match(regex_pattern)
+    matches[4]
+  end
+
+  def github_username
+    matches = self.github.match(regex_pattern)
+    matches[4]
+  end
+
+  def tumblr_username
+    matches = self.tumblr.match(regex_pattern)
+    matches[4]
+  end
+
+  def dribbble_username
+    matches = self.dribbble.match(regex_pattern)
+    matches[4]
+  end
+
+  def pinterest_username
+    matches = self.pinterest.match(regex_pattern)
+    matches[4]
+  end
+
 end
