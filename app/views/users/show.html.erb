@@ -63,24 +63,43 @@
         <% end %>
 
         <% if @user.linkedin != "" && @user.linkedin != nil %>
-
-          <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
+          <% if @user.linkedin.include?("http") || @user.linkedin.include?("www") %>
+            <a href="<%= @user.linkedin %>"><li>LinkedIn</li></a>
+          <% else %>
+            <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
+          <% end %>
         <% end %>
 
         <% if @user.github != "" && @user.github != nil %>
-          <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
+          <% if @user.github.include?("http") || @user.github.include?("www") %>
+            <a href="<%= @user.github %>"><li>Github</li></a>
+          <% else %>
+            <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
+          <% end %>
         <% end %>
 
         <% if @user.tumblr != "" && @user.tumblr != nil %>
-          <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
+          <% if @user.tumblr.include?("http") || @user.tumblr.include?("www") %>
+            <a href="<%= @user.tumblr %>"><li>Tumblr</li></a>
+          <% else %>
+            <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
+          <% end %>
         <% end %>
 
         <% if @user.dribbble != "" && @user.dribbble != nil %>
-          <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
+          <% if @user.dribbble.include?("http") || @user.dribbble.include?("www") %>
+            <a href="<%= @user.dribbble %>"><li>Dribbble</li></a>
+          <% else %>
+            <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
+          <% end %>
         <% end %>
 
         <% if @user.pinterest != "" && @user.pinterest != nil %>
-          <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
+          <% if @user.pinterest.include?("http") || @user.pinterest.include?("www") %>
+            <a href="<%= @user.pinterest %>"><li>Pinterest</li></a>
+          <% else %>
+            <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
+          <% end %>
         <% end %>
       </ul>
     </div>
