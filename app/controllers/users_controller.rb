@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    puts "INDEX: USING SEED #{session[:seed]}"
     @categories = Category.all
     User.connection.execute("select setseed(#{session[:seed]})")
     @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").order("RANDOM()").page(1)
@@ -16,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def page
-    puts "PAGE #{params[:page]}: USING SEED #{session[:seed]}"
     User.connection.execute("select setseed(#{session[:seed]})")
     @users = User.joins(:category).select("users.id, users.username, users.first_name, users.last_name, users.avatar, categories.name AS category_name").order("RANDOM()").page(params[:page])
     render partial: 'partials/polaroid'
@@ -46,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def admin_email
-    if session[:admin]
+    if current_user.admin?
       render :admin_email
     else
       flash.notice = "Forbidden: requires administrator access"
