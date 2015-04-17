@@ -39,7 +39,7 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <% if @user.facebook.include? "http" || @user.facebook.include? "www" %>
+          <% if @user.facebook.include?("http") || @user.facebook.include?("www") %>
             <a href="<%= @user.facebook %>"><li>Facebook</li></a>
           <% else %>
             <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
@@ -47,7 +47,7 @@
         <% end %>
 
         <% if @user.twitter != "" && @user.twitter != nil %>
-          <% if @user.twitter.include? "http" || @user.twitter.include? "www" %>
+          <% if @user.twitter.include?("http") || @user.twitter.include?("www") %>
             <a href="<%= @user.twitter %>"><li>Twitter</li></a>
           <% else %>
             <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
@@ -55,7 +55,7 @@
         <% end %>
 
         <% if @user.instagram != "" && @user.instagram != nil %>
-          <% if @user.instagram.include? "http" || @user.instagram.include? "www" %>
+          <% if @user.instagram.include?("http") || @user.instagram.include?("www") %>
             <a href="<%= @user.instagram %>"><li>Instagram</li></a>
           <% else %>
             <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
@@ -63,7 +63,7 @@
         <% end %>
 
         <% if @user.linkedin != "" && @user.linkedin != nil %>
-          
+
           <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
         <% end %>
 
