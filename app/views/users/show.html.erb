@@ -41,6 +41,10 @@
         <% if @user.facebook != "" && @user.facebook != nil %>
           <% if @user.facebook.include?("http") || @user.facebook.include?("www") %>
             <a href="<%= @user.facebook %>"><li>Facebook</li></a>
+          <% elsif @user.facebook.include?("www") && !@user.facebook.include?("http") %>
+            <a href="http://<%= @user.facebook %>"><li>Facebook</li></a>
+          <% elsif @user.facebook.include?(".com") && !@user.include?("www") && !@user.include?("http") %>
+            <a href="http://<%= @user.facebook %>"><li>Facebook</li></a>
           <% else %>
             <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
           <% end %>
