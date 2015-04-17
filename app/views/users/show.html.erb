@@ -39,26 +39,46 @@
       <% end %>
       <ul>
         <% if @user.facebook != "" && @user.facebook != nil %>
-          <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
+          <% if @user.facebook.include? "http" || @user.facebook.include? "www" %>
+            <a href="<%= @user.facebook %>"><li>Facebook</li></a>
+          <% else %>
+            <a href="http://facebook.com/<%= @user.facebook %>"><li>Facebook</li></a>
+          <% end %>
         <% end %>
+
         <% if @user.twitter != "" && @user.twitter != nil %>
-          <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
+          <% if @user.twitter.include? "http" || @user.twitter.include? "www" %>
+            <a href="<%= @user.twitter %>"><li>Twitter</li></a>
+          <% else %>
+            <a href="http://twitter.com/<%= @user.twitter %>"><li>Twitter</li></a>
+          <% end %>
         <% end %>
+
         <% if @user.instagram != "" && @user.instagram != nil %>
-          <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
+          <% if @user.instagram.include? "http" || @user.instagram.include? "www" %>
+            <a href="<%= @user.instagram %>"><li>Instagram</li></a>
+          <% else %>
+            <a href="http://instagram.com/<%= @user.instagram %>"><li>Instagram</li></a>
+          <% end %>
         <% end %>
+
         <% if @user.linkedin != "" && @user.linkedin != nil %>
+          
           <a href="http://linkedin.com/<%= @user.linkedin %>"><li>LinkedIn</li></a>
         <% end %>
+
         <% if @user.github != "" && @user.github != nil %>
           <a href="http://github.com/<%= @user.github %>"><li>Github</li></a>
         <% end %>
+
         <% if @user.tumblr != "" && @user.tumblr != nil %>
           <a href="http://tumblr.com/<%= @user.tumblr %>"><li>Tumblr</li></a>
         <% end %>
+
         <% if @user.dribbble != "" && @user.dribbble != nil %>
           <a href="http://<%= @user.dribbble %>"><li>Dribbble</li></a>
         <% end %>
+
         <% if @user.pinterest != "" && @user.pinterest != nil %>
           <a href="http://<%= @user.pinterest %>"><li>Pinterest</li></a>
         <% end %>
